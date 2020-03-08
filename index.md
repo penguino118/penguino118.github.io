@@ -1,10 +1,24 @@
-## Welcome to da site!!!!!
+## Penguino's epic giogio modding docs
+![hermodynamics](https://cdn.discordapp.com/attachments/633108228661575681/633120632632115201/jon_vs_minorities.gif)
+Special thanks to Hudgyn Sasdarl/JustinJKJ
+im gonna add stuf later .
 
-![Alt Text](https://cdn.discordapp.com/attachments/633108228661575681/633120632632115201/jon_vs_minorities.gif)
+### justinjkj's txt files
 
-### Mark
+[Character ID list](https://raw.githubusercontent.com/penguino118/penguino118.github.io/master/giogiochr.txt)
+[NPC list](https://raw.githubusercontent.com/penguino118/penguino118.github.io/master/giogionpc.txt)
+[Gallery unlockables list](https://raw.githubusercontent.com/penguino118/penguino118.github.io/master/giogiogallery.txt)
+[afs_00 info](https://raw.githubusercontent.com/penguino118/penguino118.github.io/master/giogioadk.txt)
+[snd files info](https://raw.githubusercontent.com/penguino118/penguino118.github.io/master/giogiosnd.txt)
+[afs_data info](https://raw.githubusercontent.com/penguino118/penguino118.github.io/master/giogiofiles.txt)
+[Loading screens list](https://raw.githubusercontent.com/penguino118/penguino118.github.io/master/giogioloadscreen.txt)
+[Cutscenes list](https://raw.githubusercontent.com/penguino118/penguino118.github.io/master/giogioscript.txt)
 
-Markdown is a lightweight person
+### cheat engine stuff
+
+[our cheat table](https://github.com/penguino118/penguino118.github.io/blob/master/gio.CT)
+
+### test
 
 ```markdown
 Syntax highlighted code block
