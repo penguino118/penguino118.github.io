@@ -5,8 +5,8 @@ im gonna add stuf later .
 
 ### justinjkj's txt files
 
-[Character ID list](https://raw.githubusercontent.com/penguino118/penguino118.github.io/master/giogiochr.txt)\
-[NPC list](https://raw.githubusercontent.com/penguino118/penguino118.github.io/master/giogionpc.txt)\
+[Character ID list](https://raw.githubusercontent.com/penguino118/penguino118.github.io/master/giogiochr.txt)<br/>
+[NPC list](https://raw.githubusercontent.com/penguino118/penguino118.github.io/master/giogionpc.txt)<br/>
 [Gallery unlockables list](https://raw.githubusercontent.com/penguino118/penguino118.github.io/master/giogiogallery.txt)\
 [afs_00 info](https://raw.githubusercontent.com/penguino118/penguino118.github.io/master/giogioadk.txt)\
 [snd files info](https://raw.githubusercontent.com/penguino118/penguino118.github.io/master/giogiosnd.txt)\
