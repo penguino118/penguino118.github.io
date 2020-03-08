@@ -1,37 +1,28 @@
-## Welcome to GitHub Pages
+## Welcome to da site!!!!!
 
-You can use the [editor on GitHub](https://github.com/penguino118/penguino118.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+![Alt Text](https://cdn.discordapp.com/attachments/633108228661575681/633120632632115201/jon_vs_minorities.gif)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your soup files.
+### Mark
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Markdown is a lightweight person
 
 ```markdown
 Syntax highlighted code block
 
-# Header 1
-## Header 2
-### Header 3
+# Total list of Mark(s
 
-- Bulleted
-- List
+1. Mark 0
+2. Mark two
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
 ```
+Look at this one! I call it: **Bold** and _Italic_
+MORE LIKE, GO TRAIN YOUR hemodynamics
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
-### Jekyll Themes
+[Link](https://cdn.discordapp.com/attachments/633108228661575681/633120609987198976/garfeidl_stdetrrip.gif) test
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/penguino118/penguino118.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+For more details see your nearest phonebook.
 
 ### Support or Contact
  
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Having trouble with Pages? Check out the exit button
