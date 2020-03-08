@@ -1,0 +1,29 @@
+npc_000 - Beanie Hat Civilian (Buccellati's Coming)
+npc_001 - Naples Civilian 1
+npc_002 - Naples Civilian 2
+npc_003 - Naples Civilian 3
+npc_004 - other than the size there seems to be no difference from 003
+npc_005 - Soul-Swapped Mother (The Requiem Plays Quietly)
+npc_006 - School Girl (Gold Experience)
+npc_007 - Old Man (The Grateful Dead)
+npc_008 - Old Woman
+npc_009 - Soccer Player 1 (King Crimson vs. Metallica)
+npc_00a - Soccer Player 2
+npc_00d - Pericolo with Gun (Head to Venezia!)
+npc_00e - Janitor (Joining the Gang)
+npc_011 - Sewer Hobo (Gold Experience Requiem)
+npc_012 - Old Dog Owner
+npc_013 - Little Girl
+npc_014 - Mafioso (Ending)
+npc_102 - Fly (Buccellati's Coming)
+npc_103 - Crow (Man in the Mirror and Purple Haze)
+npc_104 - Cat (Narancia's Aerosmith)
+npc_105 - Rat
+npc_106 - Spider
+npc_107 - Coco Jumbo (key included and likely inseparable from the model)
+npc_10a - Brown Dog/Benedict (The Requiem Plays Quietly)
+npc_203 - Buccellati's Tooth (Buccellati's Coming)
+npc_204 - Polpo's Lighter (Joining the Gang)
+npc_207 - Coco Jumbo (ingame)
+npc_209 - The Boss's Laptop (Spice Girl)
+npc_211 - Hand Brooch (Notorious B.I.G)

@@ -1,0 +1,43 @@
+sdpl##.txt - Player textboxes
+sdplxx.txt - Unused player textbox template
+sd###.txt  - Mid-fight lines
+d###.pzz  - 3D cutscenes data
+d###_##.pzz - Character and/or prop animation data for 3D Cutscenes
+k###.pzz  - 2D cutscene data
+ks##.pzz - Drama cutscene data
+pl##.pzz -  Character files (Model, textures, animations and skeleton data)
+pl##p.pzz - Character specific props (Ex. Giorno's plants or Green Day's mold)
+p##_ef_tbl.bin - Character prop animations
+pl##.hit - Character collision data
+lw###.pzz - Stage collisions
+st###.pzz - Stage model data
+ld###.pzz - Loading screen textures
+rc - Stage camera control data
+sc - Stage camera opening animation
+c##_tbl.bin - Stage select map opening camera data
+pcmn_tbl.bin - Common player animations
+scmn_tbl.bin - Common stand animations
+cock.pzz - UI textures 
+cockpit.pzz - GUI textures
+dcomn.pzz - Speech bubbles, onomatopoeia, zoom lines and others
+demo.pzz - Title screen textures
+eff00.pzz - Unknown (Effects?)
+ga01 - Gallery posters
+ga02 - Gallery stage concept art
+ga08 - Gallery Araki illustrations
+me00p - Main menu textures
+me01p - Super Story stage select textures
+me02p - Another Story stage select textures 
+re00.pzz - Results screen textures
+icon.bin - 3D icon used for the memory card file
+nec20rg04.pzz - Font used for text
+se###.pzz - Unknown (Stage props?)
+so###_mot.bin - Unknown (Stage prop animations?)
+staff.pzz - Staff roll font
+taiken.pzz - Unused copies of the gallery posters?
+wipe.pzz - Unknown
+ball.pzz - Unknown 
+npc_###.pzz - NPC model data, some including animations
+npc_000_tbl.pzz - Common NPC animations
+gal_mot_tbl.pzz - Animations for the gallery 3D model viewer
+shadow.txb - Shading texture used on character models

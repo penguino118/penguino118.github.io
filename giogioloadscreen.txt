@@ -1,0 +1,60 @@
+ld000 Demo: Volume 59 cover
+ld001 2-1 Cutscene 3: Volume 55 cover, zoomed out
+ld002 Unused: Volume 58 cover, zoomed out
+ld003 10-3 Cutscene 1: Volume 60 cover, zoomed out
+ld004 Unused: Volume 63 cover, zoomed out
+ld005 Unused: Volume 53 cover, zoomed out
+ld006 Unused: 7-2 Cutscene 3 Araki illustration, zoomed out
+ld007 Unused: Chapter 589 cover, zoomed out
+ld008 Unused: 2-1 Cutscene 2 Araki illustration, zoomed out
+ld009 10-2 Cutscene 2: Volume 54 cover, zoomed out
+ld010 Unused: Volume 56 cover, zoomed out
+ld011 4-2 Cutscene 2: Chapter 475 cover, zoomed out
+ld012 Unused: Volume 57 cover, zoomed out
+ld013 Unused: Volume 50 cover, zoomed out
+ld014 Unused: Chapter 537 cover, zoomed out
+ld015 Unused: 8-1 Cutscene 2 Araki illustration, zoomed out
+ld016 11-3 Cutscene 6: Volume 59 cover, zoomed in
+ld017 11-2 Cutscene 2: Volume 58 cover
+ld018 1-2 Cutscene 2: Volume 55 cover
+ld019 1-2 Cutscene 1: Volume 60 cover
+ld020 11-2 Cutscene 4: Volume 63 cover
+ld021 5-2 Cutscene 2: Volume 53 cover
+ld022 7-2 Cutscene 3: Previous Araki illustration
+ld023 11-3 Cutscene 7 (Credits): Chapter 589 cover
+ld024 2-1 Cutscene 2: Previous Araki illustration
+ld025 1-1 Cutscene 1: Volume 54 cover
+ld026 7-1 Cutscene 2: Volume 56 cover
+ld027 3-1 Cutscene 2: Chapter 475 cover
+ld028 10-1 Cutscene 2: Volume 57 cover
+ld029 6-2 Cutscene 2: Volume 50 cover
+ld030 4-1 Cutscene 2: Chapter 537 cover
+ld031 8-1 Cutscene 2: Previous Araki illustration
+ld032 1-1 Battle: Original, possibly based on Bucciarati's glare at Giorno during his interrogation
+ld033 1-2 Battle: Original, based on Bucciarati turning to face Giorno before hiding
+ld034 2-1 Battle: Original, possibly based on Black Sabbath staring at Giorno while he's outside the shadows
+ld035 3-1 Battle: Original, possibly based on Formaggio standing on Narancia's rental car while shrunk
+ld036 4-1 Battle: Original, based on Illuso revealing himself to Abbacchio in the dog mosaic room
+ld037 4-2 Battle: Original, uses Abbacchio's appearance when half of his body is replaced by half of Moody Blues
+ld038 4-3 Battle: Original, based on Purple Haze sitting during its first reveal
+ld039 5-1 Cutscene 2: Original, possibly based on Prosciutto and Pesci approaching Bucciarati at the train station
+ld040 5-1 Battle: Original, possibly based on Prosciutto shooting Mista
+ld041 5-2 Battle: Original, possibly based on Pesci explaining his ability to Mista
+ld042 6-1 Battle: Original, based on Ghiaccio skating toward Mista and Giorno's car
+ld043 6-2 Battle: Original, based on a different panel of Ghiaccio skating
+ld044 7-1 Battle: Original, based on The Boss standing behind a pillar Bucciarati zips apart
+ld045 7-2 Cutscene 1: Original, with King Crimson based on Volume 56's cover and The Boss reusing the previous loading screen's pose
+ld046 7-2 Battle: Original, uses Bucciarati's appearance after he is impaled by King Crimson
+ld047 8-1 Battle: Original, based on Spice Girl's first full appearance to Trish
+ld048 8-2 Battle: Original, based on Notorious B.I.G after consuming the plane engines
+ld049 9-1 Cutscene 2: Original, uses Moody Blues's timer searching for the Boss's identity
+ld050 10-1 Battle: Original, uses Secco recording
+ld051 10-2 Battle: Original, based on Cioccolata's appearance when The Boss explains his past to Doppio
+ld052 10-3 Battle: Original, based on Secco chasing Bucciarati underground
+ld053 11-1 Cutscene 2: Original, based on Diavolo in Doppio's body about to reveal his true appearance
+ld054 11-1 Battle: Original, based on Diavolo hearing Chariot Requiem's footsteps
+ld055 11-2 Battle: Original, based on Chariot Requiem descending the Colosseo stairs
+ld056 11-3 Cutscene 2: Original, based on King Crimson emerging to cut off Giorno's hand
+ld057 11-3 Cutscene 4: Original, uses the Arrow
+ld058 11-3 Battle: Original, based on Diavolo proclaiming victory after destroying Gold Experience's skull
+ld059 11-3 Cutscene 5: Original, based on Gold E. Requiem explaining its ability to Diavolo

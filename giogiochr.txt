@@ -1,0 +1,73 @@
+00 - Giorno Giovanna
+01 - Bruno Bucciarati
+02 - Guido Mista
+03 - Narancia Ghirga
+04 - Leone Abbacchio
+05 - Pannacotta Fugo
+06 - Trish Una
+07 - Jean-Pierre Polnareff
+08 - Leaky-Eye Luca
+09 - formerly Koichi Hirose (no files exist)
+0a - Polpo (model not visible through normal means)
+0b - Mario Zucchero
+0c - formerly Sale (no files exist)
+0d - Formaggio
+0e - Illusio
+0f - Pesci
+10 - Prosciutto
+11 - formerly Melone (no files exist)
+12 - White Album Ghiaccio
+13 - Vinegar Doppio
+14 - 
+	Diavolo
+15 - Squalo
+16 - Tiziano
+17 - formerly Carne (no files exist)
+18 - Risotto Nero
+19 - Cioccolata
+1a - Secco
+1b - Gold Experience
+1c - GE Requiem
+1d - Sticky Fingers
+1e - Sex Pistols (all six are part of one model)
+1f - Aerosmith
+20 - Moody Blues
+21 - Purple Haze
+22 - Spice Girl
+23 - Silver Chariot
+24 - SC Requiem
+25 - formerly Echoes (no files exist)
+26 - why are there two slots here (probably two ACTS of Echoes were planned, at least for cutscenes)
+27 - Black Sabbath
+28 - formerly Soft Machine (no files exist)
+29 - formerly Kraft Work (no files exist)
+2a - Little Feet
+2b - Man in the Mirror
+2c - Grateful Dead
+2d - formerly Baby Face (no files exist)
+2e - why are there two slots here (probably for computer Baby Face and humanoid Baby Face)
+2f - 
+	King Crimson
+30 - formerly Talking Head (no files exist)
+31 - Clash (model not visible through normal means)
+32 - Notorious B.I.G. 1
+33 - Notorious B.I.G. 2
+34 - Green Day (mold not included)
+35 - Normal Ghiaccio
+36 - Beach Boy
+37 - ???
+38 - The Boss
+39 - ???
+3a - Shadow Prosciutto
+3b - Diavolo (Bucciarati's Soul)
+3c - "Chibi Giorno"
+3d - Requiem's Sticky Fingers
+3e - Smol Formaggio
+3f - Huge Formaggio
+40 - Little Feet-related
+41 - Little Feet-related
+42 - Highway Ghiaccio
+43 - Gio with GE Requiem
+44 - ???
+45 - ???
+46 - Soccer Doppio

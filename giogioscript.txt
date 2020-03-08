@@ -1,0 +1,92 @@
+sdpl##.txt - Player textboxes (refer to character list)
+
+- IN-BATTLE LINES -
+sd020.txt - Bucciarati's Coming 1
+sd021.txt - Bucciarati's Coming 2
+sd030.txt - Joining the Gang
+sd061.txt - Narancia's Aerosmith
+sd070.txt - The Boss' Second Order 1
+sd071.txt - The Boss' Second Order 2
+sd072.txt - Man in the Mirror and Purple Haze
+sd080.txt - Grateful Dead
+sd081.txt - Super Express to Firenze
+sd0a0.txt - Venezia's Santa Lucia Station
+sd0a1.txt - White Album
+sd0b0.txt - The Boss' Final Orders
+sd0b1.txt - The Mystery of King Crimson
+sd0d0.txt - No Flightcode
+sd0d1.txt - Notorious B.I.G. 2
+sd0e0.txt - Green Day and Oasis 1
+sd0e1.txt - Green Day and Oasis 2
+sd0e2.txt - Green Day and Oasis 3
+sd0f0.txt - His Name Is Diavolo
+sd0f1.txt - The Requiem Plays Quietly
+sd0f2.txt - King of Kings
+
+- 3D CUTSCENES -
+d02a.pzz - Bucciarati's Coming 1 intro
+d02b.pzz - Bucciarati's Coming 2 intro
+d02c.pzz - Bucciarati's Coming 2 outro
+d03a.pzz - Joining the Gang intro part 2
+d03b.pzz - Joining the Gang outro part 1
+d06a.pzz - Narancia's Aerosmith outro
+d07a.pzz - The Boss' Second Order 1 intro part 2
+d07b.pzz - The Boss' Second Order 1 mid-level cutscene
+d07c.pzz - The Boss' Second Order 2 intro part 2
+d08a.pzz - Grateful Dead intro part 2
+d08b.pzz - Super Express to Firenze outro
+d0a1.pzz - White Album mid-level cutscene
+d0aa.pzz - White Album outro
+d0ba.pzz - The Boss' Final Orders intro part 2
+d0bb.pzz - The Mystery of King Crimson 2 intro
+d0bc.pzz - The Mystery of King Crimson 2 outro part 2
+d0d0.pzz - No Flightcode mid-level cutscene
+d0da.pzz - No Flightcode intro part 2
+d0e3.pzz - Green Day and Oasis 3 mid-level cutscene
+d0ea.pzz - Green Day and Oasis 1 intro part 2
+d0eb.pzz - Green Day and Oasis 2 intro part 2
+d0ec.pzz - Green Day and Oasis 3 intro
+d0fa.pzz - His Name Is Diavolo intro part 2
+d0fb.pzz - The Requiem Plays Quietly intro part 2
+d0fc.pzz - The Requiem Plays Quietly intro part 4
+d0fd.pzz - King of Kings intro part 2
+d0fe.pzz - King of Kings intro part 4
+d0ff.pzz - Ending part 1
+d0fg.pzz - Ending part 2
+d0fh.pzz - Ending part 3
+d10a.pzz - Feels Like The Sky Could Fall cutscene
+
+- 2D CUTSCENES -
+k010.pzz - Prologue
+k030.pzz - Joining the Gang intro part 1
+k031.pzz - Joining the Gang outro part 2
+k060.pzz - Narancia's Aerosmith intro
+k070.pzz - The Boss' Second Order 1 intro part 1
+k071.pzz - The Boss' Second Order 2 intro part 1
+k072.pzz - Man in the Mirror and Purple Haze intro
+k073.pzz - Man in the Mirror and Purple Haze outro
+k080.pzz - Grateful Dead intro part 1
+k081.pzz - Super Express to Firenze intro
+k0a0.pzz - Venezia's Santa Lucia Station intro
+k0a1.pzz - White Album intro
+k0b0.pzz - The Boss' Final Orders intro part 1
+k0b1.pzz - The Mystery of King Crimson outro part 1
+k0b2.pzz - The Mystery of King Crimson outro part 3
+k0d0.pzz - No Flightcode intro part 1
+k0d1.pzz - Notorious B.I.G. intro
+k0d2.pzz - Notorious B.I.G. outro
+k0e0.pzz - Green Day and Oasis 1 intro part 1
+k0e1.pzz - Green Day and Oasis 2 intro part 1
+k0e2.pzz - Green Day and Oasis 3 outro
+k0f0.pzz - His Name Is Diavolo intro part 1
+k0f1.pzz - The Requiem Plays Quietly intro part 1
+k0f2.pzz - The Requiem Plays Quietly intro part 3
+k0f3.pzz - King of Kings intro part 1
+k0f4.pzz - King of Kings intro part 3
+k100.pzz - Feels Like The Sky Could Fall intro
+k101.pzz - Feels Like The Sky Could Fall outro
+ks00.pzz - Rolling Stones drama
+ks01.pzz - The Mystery of Soft Machine drama
+ks02.pzz - Enter Sex Pistols drama
+ks03.pzz - Baby Face drama
+ks04.pzz - Clash and Talking Head drama

@@ -1,0 +1,18 @@
+coming - title announce, probably for end of demo
+dXX_YY - player lines: xx character number, yy line number
+dXXY0 - 3D cutscene audio tracks: xx stage number, y cutscene letter
+d0XX_YY - mid-level cutscene lines: xx stage number, yy cutscene number
+dcXX - demo audio tracks: xx demo number
+demoX - 2D cutscene soundtracks
+kXXX_YY - 2D cutscene lines: xxx cutscene number, yy line number
+dex_XX - cut 3D cutscene???
+OP_NAxx - prologue cutscene lines, 00 contains entire audio track and is unused
+open - Title Screen
+over - Unused "demo over". Labeled on official soundtrack as "Title-back"
+result - Mission Complete
+s_select - unused duplicate of result, probably would have been used in Super Story chapter select
+s_start - stage title demo theme
+sXX_YY - stage themes: xx chapter number, yy chapter part number, 0b themes are "situational" themes
+sdXX_YY - 2D story drama lines: xx drama number plus 4 (presumably the 4 dramas included on the ost would have been in-game at one point), yy line number
+select - Menu theme
+staff - unused
