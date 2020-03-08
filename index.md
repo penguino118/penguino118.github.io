@@ -12,7 +12,7 @@ im gonna add stuf later .
 [snd files info](https://raw.githubusercontent.com/penguino118/penguino118.github.io/master/giogiosnd.txt)\
 [afs_data info](https://raw.githubusercontent.com/penguino118/penguino118.github.io/master/giogiofiles.txt)\
 [Loading screens list](https://raw.githubusercontent.com/penguino118/penguino118.github.io/master/giogioloadscreen.txt)\
-[Cutscenes list](https://raw.githubusercontent.com/penguino118/penguino118.github.io/master/giogioscript.txt)\
+[Cutscenes list](https://raw.githubusercontent.com/penguino118/penguino118.github.io/master/giogioscript.txt)
 
 ### cheat engine stuff
 
