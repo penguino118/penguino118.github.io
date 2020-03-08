@@ -1,0 +1,5066 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="29">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>387</ID>
+      <Description>"Super Story Cinematic"</Description>
+      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:N/A
+2:Prologue 3D Cutscene
+4:Prologue 2D Cutscene/1-1 Title Card
+6:1-1 3D Cutscene 1
+8:1-1 Battle/1-2 Title Card
+10:1-2 3D Cutscene 1
+12:1-2 Battle
+14:1-2 3D Cutscene 2
+16:2-1 Title Card
+18:2-1 2D Cutscene 1
+20:2-1 3D Cutscene 1
+22:2-1 Battle
+24:2-1 3D Cutscene 2
+26:2-1 2D Cutscene 2
+34:3-1 Title Card
+36:3-1 2D Cutscene
+38:3-1 Battle
+40:3-1 3D Cutscene
+48:4-1 Title Card
+50:4-1 2D Cutscene
+52:4-1 3D Cutscene
+54:4-1 Battle/4-2 Title Card
+56:4-2 2D Cutscene
+58:4-2 3D Cutscene
+60:4-2 Battle/4-3 Title Card
+62:4-3 2D Cutscene 1
+64:4-3 Battle
+66:4-3 2D Cutscene 2
+72:5-1 Title Card
+74:5-1 2D Cutscene
+76:5-1 3D Cutscene
+78:5-1 Battle/5-2 Title Card
+80:5-2 2D Cutscene
+82:5-2 Battle
+84:5-2 3D Cutscene
+88:6-1 Title Card
+90:6-1 2D Cutscene
+92:6-1 Battle/6-2 Title Card
+94:6-2 2D Cutscene
+96:6-2 Battle
+98:6-2 3D Cutscene
+112:7-1 Title Card
+114:7-1 2D Cutscene
+116:7-1 3D Cutscene
+118:7-1 Battle/7-2 Title Card
+120:7-2 3D Cutscene 1
+122:7-2 Battle
+124:7-2 2D Cutscene 1
+126:7-2 3D Cutscene 2
+128:7-2 2D Cutscene 2
+136:8-1 Title Card
+138:8-1 2D Cutscene
+140:8-1 3D Cutscene
+142:8-1 Battle/8-2 Title Card
+144:8-2 2D Cutscene 1
+146:8-2 Battle
+148:8-2 2D Cutscene 2
+152:9-1 Title Card
+154:9-1 2D Cutscene 1
+156:9-1 3D Cutscene
+158:9-1 2D Cutscene 2
+160:Menu (Returning From 9-1)
+176:10-1 Title Card
+178:10-1 2D Cutscene
+180:10-1 3D Cutscene
+182:10-1 Battle
+184:10-2 Title Card
+186:10-2 2D Cutscene
+188:10-2 3D Cutscene
+190:10-2 Battle/10-3 Title Card
+192:10-3 3D Cutscene
+194:10-3 Battle
+196:10-3 2D Cutscene
+208:11-1 Title Card
+210:11-1 2D Cutscene
+212:11-1 3D Cutscene
+214:11-1 Battle/11-2 Title Card
+216:11-2 2D Cutscene 1
+218:11-2 3D Cutscene 1
+220:11-2 2D Cutscene 2
+222:11-2 3D Cutscene 2
+224:11-2 Battle/11-3 Title Card
+226:11-3 2D Cutscene 1
+228:11-3 3D Cutscene 1
+230:11-3 2D Cutscene 2
+232:11-3 3D Cutscene 2
+234:11-3 Battle
+236:11-3 3D Cutscene 3
+238:Ending Cutscene 1
+240:Ending Cutscene 2
+</DropDownList>
+      <LastState Value="12" RealAddress="2059DDB4"/>
+      <VariableType>Byte</VariableType>
+      <Address>2059DDB4</Address>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>390</ID>
+          <Description>"Cutscene/Battle Skip"</Description>
+          <Options moHideChildren="1"/>
+          <LastState/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+{$lua}
+timer1 = createTimer(nil, false)
+timer1.Interval = 120
+timer2 = createTimer(nil, false)
+timer2.Interval = 120
+
+[DISABLE]
+</AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>388</ID>
+              <Description>"Battles Only"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+{$lua}
+timer1.Enabled = true
+timer2.Enabled = false
+
+timer1.OnTimer = function(SkipToBattles)
+current = readBytes(542760372, 1)
+titlecard = readBytes(542761120, 1)
+if current == 4
+then writeBytes(542760372, 06)
+elseif current == 8 and titlecard == 0
+then writeBytes(542760372, 10)
+elseif current == 16
+then writeBytes(542760372, 20)
+elseif current == 34
+then writeBytes(542760372, 36)
+elseif current == 48
+then writeBytes(542760372, 52)
+elseif current == 54 and titlecard == 0
+then writeBytes(542760372, 58)
+elseif current == 60 and titlecard == 0
+then writeBytes(542760372, 62)
+elseif current == 72
+then writeBytes(542760372, 76)
+elseif current == 78 and titlecard == 0
+then writeBytes(542760372, 80)
+elseif current == 88
+then writeBytes(542760372, 90)
+elseif current == 92 and titlecard == 0
+then writeBytes(542760372, 94)
+elseif current == 112
+then writeBytes(542760372, 116)
+elseif current == 118 and titlecard == 0
+then writeBytes(542760372, 120)
+elseif current == 136
+then writeBytes(542760372, 140)
+elseif current == 142 and titlecard == 0
+then writeBytes(542760372, 144)
+elseif current == 152
+then writeBytes(542760372, 158)
+elseif current == 176
+then writeBytes(542760372, 180)
+elseif current == 184
+then writeBytes(542760372, 188)
+elseif current == 190 and titlecard == 0
+then writeBytes(542760372, 192)
+elseif current == 208
+then writeBytes(542760372, 212)
+elseif current == 214 and titlecard == 0
+then writeBytes(542760372, 222)
+elseif current == 224 and titlecard == 0
+then writeBytes(542760372, 232)
+end
+end
+
+[DISABLE]
+{$lua}
+timer1.Enabled = false
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>389</ID>
+              <Description>"All Cutscenes (Grab some popcorn, you can't quit)"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+{$lua}
+timer2.Enabled = true
+timer1.Enabled = false
+
+timer2.OnTimer = function(SkipToCutscenes)
+current = readBytes(542760372, 1)
+titlecard = readBytes(542761092, 1)
+if current == 6
+then writeBytes(542760372, 8)
+elseif current == 10
+then writeBytes(542760372, 12)
+elseif current == 14
+then writeBytes(542760372, 16)
+elseif current == 20
+then writeBytes(542760372, 22)
+elseif current == 26
+then writeBytes(542760372, 34)
+elseif current == 36
+then writeBytes(542760372, 38)
+elseif current == 40
+then writeBytes(542760372, 48)
+elseif current == 52
+then writeBytes(542760372, 54)
+elseif current == 58
+then writeBytes(542760372, 60)
+elseif current == 62
+then writeBytes(542760372, 64)
+elseif current == 66
+then writeBytes(542760372, 72)
+elseif current == 76
+then writeBytes(542760372, 78)
+elseif current == 80
+then writeBytes(542760372, 82)
+elseif current == 84
+then writeBytes(542760372, 88)
+elseif current == 90
+then writeBytes(542760372, 92)
+elseif current == 94
+then writeBytes(542760372, 96)
+elseif current == 98
+then writeBytes(542760372, 112)
+elseif current == 116
+then writeBytes(542760372, 118)
+elseif current == 120
+then writeBytes(542760372, 122)
+elseif current == 128
+then writeBytes(542760372, 136)
+elseif current == 140
+then writeBytes(542760372, 142)
+elseif current == 144
+then writeBytes(542760372, 146)
+elseif current == 148
+then writeBytes(542760372, 152)
+elseif current == 158
+then writeBytes(542760372, 176)
+elseif current == 180
+then writeBytes(542760372, 184)
+elseif current == 188
+then writeBytes(542760372, 190)
+elseif current == 192
+then writeBytes(542760372, 194)
+elseif current == 196
+then writeBytes(542760372, 208)
+elseif current == 212
+then writeBytes(542760372, 214)
+elseif current == 222
+then writeBytes(542760372, 224)
+elseif current == 232
+then writeBytes(542760372, 234)
+end
+end
+
+[DISABLE]
+{$lua}
+timer2.Enabled = false
+</AssemblerScript>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>87</ID>
+      <Description>"In-Game"</Description>
+      <Options moHideChildren="1"/>
+      <LastState Value="" Activated="1" RealAddress="00000000"/>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>341</ID>
+          <Description>"Chapter"</Description>
+          <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:Title Screen
+1:Gold Experience (First Play)
+2:Gold Experience
+3:Bucciarati's Coming
+4:Gang Initiation
+8:Capo Bucciarati: Orders from the Boss
+9:The Boss' Second Order: Get the Key!
+10:Man In The Mirror and Moody Blues
+11:Man In The Mirror and Purple Haze
+12:Grateful Dead
+13:The Firenze-Bound Super Express
+18:Venezia's Santa Lucia Station - Get the OA Disc!
+19:White Album
+21:The Boss' Final Orders
+22:The Mystery of King Crimson
+26:No Flightcode! Head to Sardegna
+27:Notorious B.I.G.
+28:Feels Like The Sky Could Fall On Us
+29:Green Day and Oasis
+31:Cioccolata's Green Day
+32:Secco's Oasis
+33:His Name Is Diavolo
+34:The Requiem Plays Quietly
+35:King of Kings
+</DropDownList>
+          <LastState Value="3" RealAddress="2059DD9D"/>
+          <VariableType>Byte</VariableType>
+          <Address>2059DD9D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>393</ID>
+          <Description>"Character (Lock In Menu)"</Description>
+          <Options moManualExpandCollapse="1"/>
+          <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:Giorno
+1:Bucciarati
+2:Mista
+3:Narancia
+4:Abbachio
+5:Fugo
+6:Trish
+7:Polnareff
+13:Formaggio
+14:Illuso
+15:Pesci
+16:Prosciutto
+18:Ghiaccio
+19:Doppio
+20:Diavolo
+25:Cioccolata
+26:Secco
+36:Silver Chariot Requiem
+39:Black Sabbath
+50:Notorious B.I.G. (Small)
+51:Notorious B.I.G. (Huge)
+56:The Boss
+59:Bucciarati (Diavolo's Body)
+66:Highway Ghiaccio
+67:Giorno ~ Requiem
+255:N/A
+
+8:Leaky-Eye Luca
+10:Polpo
+11:Zucchero
+21:Squalo
+22:Tiziano
+24:Risotto
+27:Gold Experience
+58:Shadow Prosciutto
+70:Soccer Doppio
+</DropDownList>
+          <LastState Value="255" RealAddress="2059E084"/>
+          <VariableType>Byte</VariableType>
+          <Address>2059E084</Address>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>394</ID>
+              <Description>"Voice and HUD Display"</Description>
+              <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:Giorno
+1:Bucciarati
+2:Mista
+3:Narancia
+4:Abbachio
+5:Fugo
+6:Trish
+7:Polnareff
+13:Formaggio
+14:Illuso
+15:Pesci
+16:Prosciutto
+18:Ghiaccio
+19:Doppio
+20:Diavolo
+25:Cioccolata
+26:Secco
+36:Silver Chariot Requiem
+39:Black Sabbath
+50:Notorious B.I.G. (Small)
+51:Notorious B.I.G. (Huge)
+56:The Boss
+59:Bucciarati (Diavolo's Body)
+66:Highway Ghiaccio
+67:Giorno ~ Requiem
+255:N/A
+
+8:Leaky-Eye Luca
+10:Polpo
+11:Zucchero
+21:Squalo
+22:Tiziano
+24:Risotto
+27:Gold Experience
+58:Shadow Prosciutto
+70:Soccer Doppio
+</DropDownList>
+              <LastState Value="0" RealAddress="2059DE04"/>
+              <VariableType>Byte</VariableType>
+              <Address>2059DE04</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>124</ID>
+          <Description>"Enemy Character (Lock In Menu)"</Description>
+          <Options moManualExpandCollapse="1"/>
+          <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:Giorno
+1:Bucciarati
+2:Mista
+3:Narancia
+4:Abbachio
+5:Fugo
+6:Trish
+7:Polnareff
+13:Formaggio
+14:Illuso
+15:Pesci
+16:Prosciutto
+18:Ghiaccio
+19:Doppio
+20:Diavolo
+25:Cioccolata
+26:Secco
+36:Silver Chariot Requiem
+39:Black Sabbath
+50:Notorious B.I.G. (Small)
+51:Notorious B.I.G. (Huge)
+56:The Boss
+59:Bucciarati (Diavolo's Body)
+66:Highway Ghiaccio
+67:Giorno ~ Requiem
+255:N/A
+
+8:Leaky-Eye Luca
+10:Polpo
+11:Zucchero
+21:Squalo
+22:Tiziano
+24:Risotto
+27:Gold Experience
+58:Shadow Prosciutto
+70:Soccer Doppio
+</DropDownList>
+          <LastState Value="255" RealAddress="2059E085"/>
+          <VariableType>Byte</VariableType>
+          <Address>2059E085</Address>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>370</ID>
+              <Description>"Second Enemy Character (Lock In Menu)"</Description>
+              <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:Giorno
+1:Bucciarati
+2:Mista
+3:Narancia
+4:Abbachio
+5:Fugo
+6:Trish
+7:Polnareff
+13:Formaggio
+14:Illuso
+15:Pesci
+16:Prosciutto
+18:Ghiaccio
+19:Doppio
+20:Diavolo
+25:Cioccolata
+26:Secco
+36:Silver Chariot Requiem
+39:Black Sabbath
+50:Notorious B.I.G. (Small)
+51:Notorious B.I.G. (Huge)
+56:The Boss
+59:Bucciarati (Diavolo's Body)
+66:Highway Ghiaccio
+67:Giorno ~ Requiem
+255:N/A
+
+8:Leaky-Eye Luca
+10:Polpo
+11:Zucchero
+21:Squalo
+22:Tiziano
+24:Risotto
+27:Gold Experience
+58:Shadow Prosciutto
+70:Soccer Doppio
+</DropDownList>
+              <LastState Value="255" RealAddress="2059E086"/>
+              <VariableType>Byte</VariableType>
+              <Address>2059E086</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>361</ID>
+          <Description>"Moveset"</Description>
+          <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">:Walking Only / None
+11110000:Epitaph
+11111111:All Moves
+10010:Tutorial 1 / No Stand
+10011:Tutorial 2 (No Stand + X)
+10010011:Tutorial 3 (No R1)
+</DropDownList>
+          <LastState Value="11111111" RealAddress="2059E0BC"/>
+          <VariableType>Binary</VariableType>
+          <BitStart>4</BitStart>
+          <BitLength>8</BitLength>
+          <ShowAsBinary>1</ShowAsBinary>
+          <Address>2059E0BC</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>397</ID>
+          <Description>"Moveset ID"</Description>
+          <Options moManualExpandCollapse="1"/>
+          <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:Giorno
+1:Bucciarati
+2:Mista
+3:Narancia
+4:Abbachio
+5:Fugo
+6:Trish
+7:Polnareff
+13:Formaggio
+14:Illuso
+15:Pesci
+16:Prosciutto
+18:Ghiaccio
+19:Doppio
+20:Diavolo
+25:Cioccolata
+26:Secco
+36:Silver Chariot Requiem
+39:Black Sabbath
+50:Notorious B.I.G. (Small)
+51:Notorious B.I.G. (Huge)
+56:The Boss
+59:Bucciarati (Diavolo's Body)
+66:Highway Ghiaccio
+67:Giorno ~ Requiem
+255:N/A
+8:Leaky-Eye Luca
+10:Polpo
+11:Zucchero
+21:Squalo
+22:Tiziano
+24:Risotto
+27:Gold Experience
+58:Shadow Prosciutto
+60:Don't Change (Bucciarati's Coming 2)
+70:Soccer Doppio
+</DropDownList>
+          <LastState Value="60" RealAddress="20593B24"/>
+          <VariableType>Byte</VariableType>
+          <Address>20593B24</Address>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>430</ID>
+              <Description>"Bucciarati's Coming 2"</Description>
+              <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:Giorno
+1:Bucciarati
+2:Mista
+3:Narancia
+4:Abbachio
+5:Fugo
+6:Trish
+7:Polnareff
+13:Formaggio
+14:Illuso
+15:Pesci
+16:Prosciutto
+18:Ghiaccio
+19:Doppio
+20:Diavolo
+25:Cioccolata
+26:Secco
+36:Silver Chariot Requiem
+39:Black Sabbath
+50:Notorious B.I.G. (Small)
+51:Notorious B.I.G. (Huge)
+56:The Boss
+59:Bucciarati (Diavolo's Body)
+66:Highway Ghiaccio
+67:Giorno ~ Requiem
+255:N/A
+8:Leaky-Eye Luca
+10:Polpo
+11:Zucchero
+21:Squalo
+22:Tiziano
+24:Risotto
+27:Gold Experience
+58:Shadow Prosciutto
+70:Soccer Doppio
+</DropDownList>
+              <LastState Value="0" RealAddress="205957A4"/>
+              <VariableType>Byte</VariableType>
+              <Address>205957A4</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>41</ID>
+          <Description>"Player Health"</Description>
+          <Options moRecursiveSetValue="1" moManualExpandCollapse="1"/>
+          <LastState Value="1000" RealAddress="20593C44"/>
+          <VariableType>2 Bytes</VariableType>
+          <Address>20593C44</Address>
+          <Hotkeys>
+            <Hotkey>
+              <Action>Set Value</Action>
+              <Keys>
+                <Key>17</Key>
+                <Key>72</Key>
+              </Keys>
+              <Value>1000</Value>
+              <ID>0</ID>
+            </Hotkey>
+            <Hotkey>
+              <Action>Set Value</Action>
+              <Keys>
+                <Key>17</Key>
+                <Key>72</Key>
+                <Key>16</Key>
+              </Keys>
+              <Value>1500</Value>
+              <ID>1</ID>
+            </Hotkey>
+          </Hotkeys>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>357</ID>
+              <Description>"Bucciarati's Coming 2"</Description>
+              <LastState Value="1000" RealAddress="205958C4"/>
+              <VariableType>2 Bytes</VariableType>
+              <Address>205958C4</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>3</ID>
+          <Description>"Stand Gauge"</Description>
+          <Options moRecursiveSetValue="1" moManualExpandCollapse="1"/>
+          <LastState Value="1000" RealAddress="20594364"/>
+          <VariableType>2 Bytes</VariableType>
+          <Address>20594364</Address>
+          <Hotkeys>
+            <Hotkey>
+              <Action>Set Value</Action>
+              <Keys>
+                <Key>17</Key>
+                <Key>71</Key>
+              </Keys>
+              <Value>1000</Value>
+              <ID>0</ID>
+            </Hotkey>
+            <Hotkey>
+              <Action>Set Value</Action>
+              <Keys>
+                <Key>17</Key>
+                <Key>71</Key>
+                <Key>16</Key>
+              </Keys>
+              <Value>1500</Value>
+              <ID>1</ID>
+            </Hotkey>
+          </Hotkeys>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>391</ID>
+              <Description>"Bucciarati's Coming 2"</Description>
+              <LastState Value="1000" RealAddress="20595FE4"/>
+              <VariableType>2 Bytes</VariableType>
+              <Address>20595FE4</Address>
+              <Hotkeys>
+                <Hotkey>
+                  <Action>Set Value</Action>
+                  <Keys>
+                    <Key>17</Key>
+                    <Key>71</Key>
+                  </Keys>
+                  <Value>1000</Value>
+                  <ID>0</ID>
+                </Hotkey>
+                <Hotkey>
+                  <Action>Set Value</Action>
+                  <Keys>
+                    <Key>17</Key>
+                    <Key>71</Key>
+                    <Key>16</Key>
+                  </Keys>
+                  <Value>1500</Value>
+                  <ID>1</ID>
+                </Hotkey>
+              </Hotkeys>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>43</ID>
+          <Description>"Enemy Health"</Description>
+          <Options moRecursiveSetValue="1" moManualExpandCollapse="1"/>
+          <LastState Value="1000" RealAddress="20594A84"/>
+          <VariableType>2 Bytes</VariableType>
+          <Address>20594A84</Address>
+          <Hotkeys>
+            <Hotkey>
+              <Action>Set Value</Action>
+              <Keys>
+                <Key>17</Key>
+                <Key>79</Key>
+              </Keys>
+              <Value>0</Value>
+              <Description>1-Hit K.O.</Description>
+              <ID>0</ID>
+            </Hotkey>
+          </Hotkeys>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>383</ID>
+              <Description>"Bucciarati's Coming 2"</Description>
+              <LastState Value="1000" RealAddress="20596704"/>
+              <VariableType>2 Bytes</VariableType>
+              <Address>20596704</Address>
+              <Hotkeys>
+                <Hotkey>
+                  <Action>Set Value</Action>
+                  <Keys>
+                    <Key>17</Key>
+                    <Key>79</Key>
+                  </Keys>
+                  <Value>0</Value>
+                  <Description>1-Hit K.O.</Description>
+                  <ID>0</ID>
+                </Hotkey>
+              </Hotkeys>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>386</ID>
+          <Description>"Enemy Stand Gauge"</Description>
+          <Options moRecursiveSetValue="1" moManualExpandCollapse="1"/>
+          <LastState Value="1000" RealAddress="205951A4"/>
+          <VariableType>2 Bytes</VariableType>
+          <Address>205951A4</Address>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>392</ID>
+              <Description>"Bucciarati's Coming 2"</Description>
+              <LastState Value="1000" RealAddress="20596E24"/>
+              <VariableType>2 Bytes</VariableType>
+              <Address>20596E24</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>421</ID>
+          <Description>"Character Position"</Description>
+          <Options moHideChildren="1"/>
+          <LastState Value="" Activated="1" RealAddress="00000000"/>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>414</ID>
+              <Description>"X Position"</Description>
+              <LastState Value="140" RealAddress="20593BC0"/>
+              <VariableType>Float</VariableType>
+              <Address>20593BC0</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>413</ID>
+              <Description>"Y Position"</Description>
+              <LastState Value="0" RealAddress="20593BC4"/>
+              <VariableType>Float</VariableType>
+              <Address>20593BC4</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>415</ID>
+              <Description>"Z Position"</Description>
+              <LastState Value="140" RealAddress="20593BC8"/>
+              <VariableType>Float</VariableType>
+              <Address>20593BC8</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>2</ID>
+          <Description>"Secret Factor"</Description>
+          <LastState Value="0" RealAddress="2059D836"/>
+          <VariableType>Byte</VariableType>
+          <Address>2059D836</Address>
+          <Hotkeys>
+            <Hotkey>
+              <Action>Set Value</Action>
+              <Keys>
+                <Key>17</Key>
+                <Key>83</Key>
+              </Keys>
+              <Value>10</Value>
+              <ID>0</ID>
+            </Hotkey>
+          </Hotkeys>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>92</ID>
+          <Description>"Timer"</Description>
+          <LastState Value="18000" RealAddress="2059DDB8"/>
+          <VariableType>2 Bytes</VariableType>
+          <Address>2059DDB8</Address>
+          <Hotkeys>
+            <Hotkey>
+              <Action>Set Value</Action>
+              <Keys>
+                <Key>17</Key>
+                <Key>84</Key>
+              </Keys>
+              <Value>0</Value>
+              <Description>Instant Timer Over</Description>
+              <ID>0</ID>
+            </Hotkey>
+          </Hotkeys>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>425</ID>
+          <Description>"Mista's Bullets"</Description>
+          <LastState Value="0" RealAddress="20593E51"/>
+          <VariableType>Byte</VariableType>
+          <Address>20593E51</Address>
+          <Hotkeys>
+            <Hotkey>
+              <Action>Set Value</Action>
+              <Keys>
+                <Key>17</Key>
+                <Key>89</Key>
+              </Keys>
+              <Value>6</Value>
+              <Description>Reload</Description>
+              <ID>0</ID>
+            </Hotkey>
+          </Hotkeys>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>127</ID>
+          <Description>"Epitaph"</Description>
+          <Options moHideChildren="1"/>
+          <LastState Value="" Activated="1" RealAddress="00000000"/>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>126</ID>
+              <Description>"Screen Effect Timer"</Description>
+              <LastState Value="0" RealAddress="2059E0B8"/>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>2 Bytes</VariableType>
+              <Address>2059E0B8</Address>
+              <Hotkeys>
+                <Hotkey>
+                  <Action>Set Value</Action>
+                  <Keys>
+                    <Key>17</Key>
+                    <Key>68</Key>
+                  </Keys>
+                  <Value>60</Value>
+                  <ID>0</ID>
+                </Hotkey>
+                <Hotkey>
+                  <Action>Set Value</Action>
+                  <Keys>
+                    <Key>17</Key>
+                    <Key>16</Key>
+                    <Key>68</Key>
+                  </Keys>
+                  <Value>0</Value>
+                  <ID>1</ID>
+                  <ActivateSound>_Za Warudo.wav</ActivateSound>
+                </Hotkey>
+                <Hotkey>
+                  <Action>Set Value</Action>
+                  <Keys>
+                    <Key>17</Key>
+                    <Key>69</Key>
+                  </Keys>
+                  <Value>280</Value>
+                  <ID>2</ID>
+                </Hotkey>
+                <Hotkey>
+                  <Action>Set Value</Action>
+                  <Keys>
+                    <Key>17</Key>
+                    <Key>16</Key>
+                    <Key>69</Key>
+                  </Keys>
+                  <Value>0</Value>
+                  <ID>3</ID>
+                </Hotkey>
+                <Hotkey>
+                  <Action>Set Value</Action>
+                  <Keys>
+                    <Key>17</Key>
+                    <Key>18</Key>
+                    <Key>69</Key>
+                  </Keys>
+                  <Value>280</Value>
+                  <ID>4</ID>
+                </Hotkey>
+                <Hotkey>
+                  <Action>Set Value</Action>
+                  <Keys>
+                    <Key>17</Key>
+                    <Key>18</Key>
+                    <Key>68</Key>
+                  </Keys>
+                  <Value>300</Value>
+                  <ID>5</ID>
+                </Hotkey>
+                <Hotkey>
+                  <Action>Set Value</Action>
+                  <Keys>
+                    <Key>17</Key>
+                    <Key>82</Key>
+                  </Keys>
+                  <Value>20</Value>
+                  <ID>6</ID>
+                </Hotkey>
+                <Hotkey>
+                  <Action>Set Value</Action>
+                  <Keys>
+                    <Key>17</Key>
+                    <Key>16</Key>
+                    <Key>82</Key>
+                  </Keys>
+                  <Value>0</Value>
+                  <ID>7</ID>
+                </Hotkey>
+              </Hotkeys>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>128</ID>
+              <Description>"Slowdown Timer"</Description>
+              <LastState Value="0" RealAddress="2059E0B2"/>
+              <VariableType>2 Bytes</VariableType>
+              <Address>2059E0B2</Address>
+              <Hotkeys>
+                <Hotkey>
+                  <Action>Set Value</Action>
+                  <Keys>
+                    <Key>17</Key>
+                    <Key>68</Key>
+                  </Keys>
+                  <Value>300</Value>
+                  <ID>0</ID>
+                </Hotkey>
+                <Hotkey>
+                  <Action>Set Value</Action>
+                  <Keys>
+                    <Key>17</Key>
+                    <Key>16</Key>
+                    <Key>68</Key>
+                  </Keys>
+                  <Value>0</Value>
+                  <ID>1</ID>
+                  <ActivateSound>_Za Warudo.wav</ActivateSound>
+                </Hotkey>
+                <Hotkey>
+                  <Action>Set Value</Action>
+                  <Keys>
+                    <Key>17</Key>
+                    <Key>69</Key>
+                  </Keys>
+                  <Value>280</Value>
+                  <ID>2</ID>
+                </Hotkey>
+                <Hotkey>
+                  <Action>Set Value</Action>
+                  <Keys>
+                    <Key>17</Key>
+                    <Key>16</Key>
+                    <Key>69</Key>
+                  </Keys>
+                  <Value>0</Value>
+                  <ID>3</ID>
+                </Hotkey>
+                <Hotkey>
+                  <Action>Set Value</Action>
+                  <Keys>
+                    <Key>17</Key>
+                    <Key>18</Key>
+                    <Key>69</Key>
+                  </Keys>
+                  <Value>280</Value>
+                  <ID>4</ID>
+                </Hotkey>
+                <Hotkey>
+                  <Action>Set Value</Action>
+                  <Keys>
+                    <Key>17</Key>
+                    <Key>18</Key>
+                    <Key>68</Key>
+                  </Keys>
+                  <Value>300</Value>
+                  <ID>5</ID>
+                </Hotkey>
+                <Hotkey>
+                  <Action>Set Value</Action>
+                  <Keys>
+                    <Key>17</Key>
+                    <Key>82</Key>
+                  </Keys>
+                  <Value>240</Value>
+                  <ID>6</ID>
+                </Hotkey>
+                <Hotkey>
+                  <Action>Set Value</Action>
+                  <Keys>
+                    <Key>17</Key>
+                    <Key>16</Key>
+                    <Key>82</Key>
+                  </Keys>
+                  <Value>0</Value>
+                  <ID>7</ID>
+                </Hotkey>
+              </Hotkeys>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>129</ID>
+              <Description>"Slowdown Amplifier"</Description>
+              <LastState Value="0" RealAddress="2059E0B4"/>
+              <VariableType>2 Bytes</VariableType>
+              <Address>2059E0B4</Address>
+              <Hotkeys>
+                <Hotkey>
+                  <Action>Set Value</Action>
+                  <Keys>
+                    <Key>17</Key>
+                    <Key>68</Key>
+                  </Keys>
+                  <Value>0</Value>
+                  <ID>0</ID>
+                </Hotkey>
+                <Hotkey>
+                  <Action>Set Value</Action>
+                  <Keys>
+                    <Key>17</Key>
+                    <Key>69</Key>
+                  </Keys>
+                  <Value>10</Value>
+                  <ID>1</ID>
+                </Hotkey>
+                <Hotkey>
+                  <Action>Set Value</Action>
+                  <Keys>
+                    <Key>17</Key>
+                    <Key>18</Key>
+                    <Key>69</Key>
+                  </Keys>
+                  <Value>10</Value>
+                  <ID>2</ID>
+                </Hotkey>
+                <Hotkey>
+                  <Action>Set Value</Action>
+                  <Keys>
+                    <Key>17</Key>
+                    <Key>18</Key>
+                    <Key>68</Key>
+                  </Keys>
+                  <Value>0</Value>
+                  <ID>3</ID>
+                </Hotkey>
+                <Hotkey>
+                  <Action>Set Value</Action>
+                  <Keys>
+                    <Key>17</Key>
+                    <Key>82</Key>
+                  </Keys>
+                  <Value>5</Value>
+                  <ID>4</ID>
+                </Hotkey>
+              </Hotkeys>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>130</ID>
+              <Description>"Target"</Description>
+              <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:Enemy
+1:Player
+2:Both
+</DropDownList>
+              <LastState Value="0" RealAddress="2059E0BB"/>
+              <VariableType>Byte</VariableType>
+              <Address>2059E0BB</Address>
+              <Hotkeys>
+                <Hotkey>
+                  <Action>Set Value</Action>
+                  <Keys>
+                    <Key>17</Key>
+                    <Key>68</Key>
+                  </Keys>
+                  <Value>0</Value>
+                  <ID>0</ID>
+                </Hotkey>
+                <Hotkey>
+                  <Action>Set Value</Action>
+                  <Keys>
+                    <Key>17</Key>
+                    <Key>18</Key>
+                    <Key>69</Key>
+                  </Keys>
+                  <Value>0</Value>
+                  <ID>2</ID>
+                </Hotkey>
+                <Hotkey>
+                  <Action>Set Value</Action>
+                  <Keys>
+                    <Key>17</Key>
+                    <Key>18</Key>
+                    <Key>68</Key>
+                  </Keys>
+                  <Value>0</Value>
+                  <ID>3</ID>
+                </Hotkey>
+                <Hotkey>
+                  <Action>Set Value</Action>
+                  <Keys>
+                    <Key>17</Key>
+                    <Key>16</Key>
+                    <Key>69</Key>
+                  </Keys>
+                  <Value>0</Value>
+                  <ID>1</ID>
+                </Hotkey>
+              </Hotkeys>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>379</ID>
+                  <Description>"[Script] "Same Type of Stand" Effect"</Description>
+                  <LastState/>
+                  <VariableType>Auto Assembler Script</VariableType>
+                  <AssemblerScript>[ENABLE]
+{$lua}
+timer = readSmallInteger(542761144)
+epitaph = readBytes(542761147, 1, false)
+epitaphtwo = epitaph * 2
+executed = 0
+if epitaph == 1
+then if executed == 0
+then writeBytes(542761140, 01)
+executed = 1
+end
+end
+
+[DISABLE]
+{$lua}
+if timer == 0
+then writeBytes(542761147, 0)
+executed = 0
+end
+</AssemblerScript>
+                  <Hotkeys>
+                    <Hotkey>
+                      <Action>Activate</Action>
+                      <Keys>
+                        <Key>17</Key>
+                        <Key>69</Key>
+                      </Keys>
+                      <ID>0</ID>
+                    </Hotkey>
+                    <Hotkey>
+                      <Action>Deactivate</Action>
+                      <Keys>
+                        <Key>17</Key>
+                        <Key>16</Key>
+                        <Key>69</Key>
+                      </Keys>
+                      <ID>1</ID>
+                    </Hotkey>
+                    <Hotkey>
+                      <Action>Deactivate</Action>
+                      <Keys>
+                        <Key>17</Key>
+                        <Key>69</Key>
+                      </Keys>
+                      <ID>2</ID>
+                    </Hotkey>
+                  </Hotkeys>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>364</ID>
+              <Description>"Slowdown Applied"</Description>
+              <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:No
+1:Yes
+</DropDownList>
+              <LastState Value="0" RealAddress="2059E0BA"/>
+              <VariableType>Byte</VariableType>
+              <Address>2059E0BA</Address>
+              <Hotkeys>
+                <Hotkey>
+                  <Action>Set Value</Action>
+                  <Keys>
+                    <Key>17</Key>
+                    <Key>68</Key>
+                  </Keys>
+                  <Value>0</Value>
+                  <ID>0</ID>
+                </Hotkey>
+                <Hotkey>
+                  <Action>Set Value</Action>
+                  <Keys>
+                    <Key>17</Key>
+                    <Key>69</Key>
+                  </Keys>
+                  <Value>1</Value>
+                  <ID>1</ID>
+                </Hotkey>
+                <Hotkey>
+                  <Action>Set Value</Action>
+                  <Keys>
+                    <Key>17</Key>
+                    <Key>18</Key>
+                    <Key>69</Key>
+                  </Keys>
+                  <Value>1</Value>
+                  <ID>2</ID>
+                </Hotkey>
+                <Hotkey>
+                  <Action>Set Value</Action>
+                  <Keys>
+                    <Key>17</Key>
+                    <Key>18</Key>
+                    <Key>68</Key>
+                  </Keys>
+                  <Value>0</Value>
+                  <ID>3</ID>
+                </Hotkey>
+              </Hotkeys>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>366</ID>
+      <Description>"Settings"</Description>
+      <Options moHideChildren="1"/>
+      <LastState Value="" Activated="1" RealAddress="00000000"/>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>365</ID>
+          <Description>"Difficulty"</Description>
+          <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:Easy
+1:Normal
+2:Hard
+</DropDownList>
+          <LastState Value="1" RealAddress="2059DD80"/>
+          <VariableType>Byte</VariableType>
+          <Address>2059DD80</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>367</ID>
+          <Description>"Sound"</Description>
+          <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:Mono
+1:Stereo
+</DropDownList>
+          <LastState Value="1" RealAddress="2059DD81"/>
+          <VariableType>Byte</VariableType>
+          <Address>2059DD81</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>368</ID>
+          <Description>"Vibration"</Description>
+          <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:ON
+1:OFF
+</DropDownList>
+          <LastState Value="0" RealAddress="2059DD82"/>
+          <VariableType>Byte</VariableType>
+          <Address>2059DD82</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>371</ID>
+          <Description>"Self-Regulation"</Description>
+          <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:OFF
+1:ON
+</DropDownList>
+          <LastState Value="0" RealAddress="2059DD83"/>
+          <VariableType>Byte</VariableType>
+          <Address>2059DD83</Address>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>5</ID>
+      <Description>"Results"</Description>
+      <Options moHideChildren="1"/>
+      <LastState Value="" RealAddress="00000000"/>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>351</ID>
+          <Description>"Story Progression"</Description>
+          <Options moManualExpandCollapse="1"/>
+          <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:N/A
+2:Intro / Bucciarati's Coming! 1
+3:Bucciarati's Coming! 2
+4:Joining the Gang
+8:Narancia's Aerosmith
+9:Man In The Mirror and Purple Haze 1
+10:Man In The Mirror and Purple Haze 2
+11:Man In The Mirror and Purple Haze 3
+12:Beach Boy and Grateful Dead 1
+13:Beach Boy and Grateful Dead 2
+18:White Album 1
+19:White Album 2
+21:Invincible King Crimson 1
+22:Invincible King Crimson 2
+26:Notorious B.I.G. 1
+27:Notorious B.I.G. 2
+28:Feels Like The Sky Could Fall At Any Moment
+29:Oasis and Green Day 1
+31:Oasis and Green Day 2
+32:Oasis and Green Day 3
+33:His Name Is Diavolo
+34:The Requiem Plays Quietly
+35:King of Kings
+</DropDownList>
+          <LastState Value="35" RealAddress="2059D838"/>
+          <VariableType>Byte</VariableType>
+          <Address>2059D838</Address>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>353</ID>
+              <Description>"Another Story Unlocked"</Description>
+              <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:No
+1:Yes
+</DropDownList>
+              <LastState Value="1" RealAddress="2059DD6C"/>
+              <VariableType>Byte</VariableType>
+              <Address>2059DD6C</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>352</ID>
+              <Description>"Gallery Unlock Level"</Description>
+              <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:0 (0%)
+1:1 (2.8%)
+2:2 (4.2%)
+3:3 (7.0%)
+4:4 (8.4%)
+5:5 (11.2%)
+6:6 (12.6%)
+7:7 (15.4%)
+8:8 (16.8%)
+9:9 (18.2%)
+10:10 (21.0%)
+11:11 (22.4%)
+12:12 (24.7%)
+13:13 (27.5%)
+14:14 (28.9%)
+15:15 (30.3%)
+16:16 (35.0%)
+17:17 (37.3%)
+18:18 (38.7%)
+19:19 (41.5%)
+20:20 (44.3%)
+21:21 (45.7%)
+22:22 (48.0%)
+23:23 (49.4%)
+24:24 (54.1%)
+25:25 (55.5%)
+26:26 (57.8%)
+27:27 (60.6%)
+28:28 (62.0%)
+29:29 (63.4%)
+30:30 (77.4%)
+31:31 (78.8%)
+32:32 (81.1%)
+33:33 (82.5%)
+34:34 (83.9%)
+35:35 (85.3%)
+36:36 (88.1%)
+37:37 (92.8%)
+38:38 (94.2%)
+39:39 (96.5%)
+40:40 (100.0%)
+</DropDownList>
+              <LastState Value="40" RealAddress="2059D839"/>
+              <VariableType>Byte</VariableType>
+              <Address>2059D839</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>4</ID>
+              <Description>"GioGio Ability"</Description>
+              <LastState Value="10200" RealAddress="2059D830"/>
+              <VariableType>2 Bytes</VariableType>
+              <Address>2059D830</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>89</ID>
+          <Description>"Super Story"</Description>
+          <Options moHideChildren="1"/>
+          <LastState Value="" RealAddress="00000000"/>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>7</ID>
+              <Description>"1-1 Gold Experience"</Description>
+              <Options moHideChildren="1"/>
+              <LastState Value="" RealAddress="00000000"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>6</ID>
+                  <Description>"Ranking"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                  <LastState Value="5" RealAddress="2059D864"/>
+                  <VariableType>Byte</VariableType>
+                  <Address>2059D864</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>8</ID>
+                  <Description>"Score"</Description>
+                  <LastState Value="200" RealAddress="2059D865"/>
+                  <VariableType>Byte</VariableType>
+                  <Address>2059D865</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>9</ID>
+              <Description>"1-2 Bucciarati's Coming"</Description>
+              <Options moHideChildren="1"/>
+              <LastState Value="" RealAddress="00000000"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>10</ID>
+                  <Description>"Ranking"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                  <LastState Value="5" RealAddress="2059D868"/>
+                  <VariableType>Byte</VariableType>
+                  <Address>2059D868</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>11</ID>
+                  <Description>"Score"</Description>
+                  <LastState Value="200" RealAddress="2059D869"/>
+                  <VariableType>Byte</VariableType>
+                  <Address>2059D869</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>14</ID>
+              <Description>"2-1 Joining the Gang"</Description>
+              <Options moHideChildren="1"/>
+              <LastState Value="" RealAddress="00000000"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>12</ID>
+                  <Description>"Ranking"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                  <LastState Value="5" RealAddress="2059D86C"/>
+                  <VariableType>Byte</VariableType>
+                  <Address>2059D86C</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>13</ID>
+                  <Description>"Score"</Description>
+                  <LastState Value="200" RealAddress="2059D86D"/>
+                  <VariableType>Byte</VariableType>
+                  <Address>2059D86D</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>15</ID>
+              <Description>"3-1 Capo Bucciarati: Orders from the Boss"</Description>
+              <Options moHideChildren="1"/>
+              <LastState Value="" RealAddress="00000000"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>16</ID>
+                  <Description>"Ranking"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                  <LastState Value="5" RealAddress="2059D87C"/>
+                  <VariableType>Byte</VariableType>
+                  <Address>2059D87C</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>17</ID>
+                  <Description>"Score"</Description>
+                  <LastState Value="200" RealAddress="2059D87D"/>
+                  <VariableType>Byte</VariableType>
+                  <Address>2059D87D</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>18</ID>
+              <Description>"4-1 The Boss' Second Order: Get the Key!"</Description>
+              <Options moHideChildren="1"/>
+              <LastState Value="" RealAddress="00000000"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>19</ID>
+                  <Description>"Ranking"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                  <LastState Value="5" RealAddress="2059D880"/>
+                  <VariableType>Byte</VariableType>
+                  <Address>2059D880</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>20</ID>
+                  <Description>"Score"</Description>
+                  <LastState Value="200" RealAddress="2059D881"/>
+                  <VariableType>Byte</VariableType>
+                  <Address>2059D881</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>21</ID>
+              <Description>"4-2 Man in the Mirror and Moody Blues"</Description>
+              <Options moHideChildren="1"/>
+              <LastState Value="" RealAddress="00000000"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>22</ID>
+                  <Description>"Ranking"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                  <LastState Value="5" RealAddress="2059D884"/>
+                  <VariableType>Byte</VariableType>
+                  <Address>2059D884</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>23</ID>
+                  <Description>"Score"</Description>
+                  <LastState Value="200" RealAddress="2059D885"/>
+                  <VariableType>Byte</VariableType>
+                  <Address>2059D885</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>24</ID>
+              <Description>"4-3 Man in the Mirror and Purple Haze"</Description>
+              <Options moHideChildren="1"/>
+              <LastState Value="" RealAddress="00000000"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>25</ID>
+                  <Description>"Ranking"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                  <LastState Value="5" RealAddress="2059D888"/>
+                  <VariableType>Byte</VariableType>
+                  <Address>2059D888</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>26</ID>
+                  <Description>"Score"</Description>
+                  <LastState Value="200" RealAddress="2059D889"/>
+                  <VariableType>Byte</VariableType>
+                  <Address>2059D889</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>44</ID>
+              <Description>"5-1 Grateful Dead"</Description>
+              <Options moHideChildren="1"/>
+              <LastState Value="" RealAddress="00000000"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>45</ID>
+                  <Description>"Ranking"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                  <LastState Value="5" RealAddress="2059D88C"/>
+                  <VariableType>Byte</VariableType>
+                  <Address>2059D88C</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>46</ID>
+                  <Description>"Score"</Description>
+                  <LastState Value="200" RealAddress="2059D88D"/>
+                  <VariableType>Byte</VariableType>
+                  <Address>2059D88D</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>48</ID>
+              <Description>"5-2 The Firenze-Bound Super Express"</Description>
+              <Options moHideChildren="1"/>
+              <LastState Value="" RealAddress="00000000"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>49</ID>
+                  <Description>"Ranking"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                  <LastState Value="5" RealAddress="2059D890"/>
+                  <VariableType>Byte</VariableType>
+                  <Address>2059D890</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>50</ID>
+                  <Description>"Score"</Description>
+                  <LastState Value="200" RealAddress="2059D891"/>
+                  <VariableType>Byte</VariableType>
+                  <Address>2059D891</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>54</ID>
+              <Description>"6-1 Venezia's Santa Lucia Station - Get the OA Disc!"</Description>
+              <Options moHideChildren="1"/>
+              <LastState Value="" RealAddress="00000000"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>55</ID>
+                  <Description>"Ranking"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                  <LastState Value="5" RealAddress="2059D8A4"/>
+                  <VariableType>Byte</VariableType>
+                  <Address>2059D8A4</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>56</ID>
+                  <Description>"Score"</Description>
+                  <LastState Value="200" RealAddress="2059D8A5"/>
+                  <VariableType>Byte</VariableType>
+                  <Address>2059D8A5</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>51</ID>
+              <Description>"6-2 White Album"</Description>
+              <Options moHideChildren="1"/>
+              <LastState Value="" RealAddress="00000000"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>52</ID>
+                  <Description>"Ranking"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                  <LastState Value="5" RealAddress="2059D8A8"/>
+                  <VariableType>Byte</VariableType>
+                  <Address>2059D8A8</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>53</ID>
+                  <Description>"Score"</Description>
+                  <LastState Value="200" RealAddress="2059D8A9"/>
+                  <VariableType>Byte</VariableType>
+                  <Address>2059D8A9</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>57</ID>
+              <Description>"7-1 The Boss' Final Orders"</Description>
+              <Options moHideChildren="1"/>
+              <LastState Value="" RealAddress="00000000"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>58</ID>
+                  <Description>"Ranking"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                  <LastState Value="5" RealAddress="2059D8B0"/>
+                  <VariableType>Byte</VariableType>
+                  <Address>2059D8B0</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>59</ID>
+                  <Description>"Score"</Description>
+                  <LastState Value="200" RealAddress="2059D8B1"/>
+                  <VariableType>Byte</VariableType>
+                  <Address>2059D8B1</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>60</ID>
+              <Description>"7-2 The Mystery of King Crimson"</Description>
+              <Options moHideChildren="1"/>
+              <LastState Value="" RealAddress="00000000"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>61</ID>
+                  <Description>"Ranking"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                  <LastState Value="5" RealAddress="2059D8B4"/>
+                  <VariableType>Byte</VariableType>
+                  <Address>2059D8B4</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>62</ID>
+                  <Description>"Score"</Description>
+                  <LastState Value="200" RealAddress="2059D8B5"/>
+                  <VariableType>Byte</VariableType>
+                  <Address>2059D8B5</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>63</ID>
+              <Description>"8-1 No Flightcode! Head to Sardegna"</Description>
+              <Options moHideChildren="1"/>
+              <LastState Value="" RealAddress="00000000"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>64</ID>
+                  <Description>"Ranking"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                  <LastState Value="5" RealAddress="2059D8C4"/>
+                  <VariableType>Byte</VariableType>
+                  <Address>2059D8C4</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>65</ID>
+                  <Description>"Score"</Description>
+                  <LastState Value="200" RealAddress="2059D8C5"/>
+                  <VariableType>Byte</VariableType>
+                  <Address>2059D8C5</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>66</ID>
+              <Description>"8-2 Notorious B.I.G."</Description>
+              <Options moHideChildren="1"/>
+              <LastState Value="" RealAddress="00000000"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>67</ID>
+                  <Description>"Ranking"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                  <LastState Value="5" RealAddress="2059D8C8"/>
+                  <VariableType>Byte</VariableType>
+                  <Address>2059D8C8</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>68</ID>
+                  <Description>"Score"</Description>
+                  <LastState Value="200" RealAddress="2059D8C9"/>
+                  <VariableType>Byte</VariableType>
+                  <Address>2059D8C9</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>69</ID>
+              <Description>"10-1 Green Day And Oasis"</Description>
+              <Options moHideChildren="1"/>
+              <LastState Value="" RealAddress="00000000"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>70</ID>
+                  <Description>"Ranking"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                  <LastState Value="5" RealAddress="2059D8D0"/>
+                  <VariableType>Byte</VariableType>
+                  <Address>2059D8D0</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>71</ID>
+                  <Description>"Score"</Description>
+                  <LastState Value="200" RealAddress="2059D8D1"/>
+                  <VariableType>Byte</VariableType>
+                  <Address>2059D8D1</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>72</ID>
+              <Description>"10-2 Cioccolata's Green Day"</Description>
+              <Options moHideChildren="1"/>
+              <LastState Value="" RealAddress="00000000"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>73</ID>
+                  <Description>"Ranking"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                  <LastState Value="5" RealAddress="2059D8D8"/>
+                  <VariableType>Byte</VariableType>
+                  <Address>2059D8D8</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>74</ID>
+                  <Description>"Score"</Description>
+                  <LastState Value="200" RealAddress="2059D8D9"/>
+                  <VariableType>Byte</VariableType>
+                  <Address>2059D8D9</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>75</ID>
+              <Description>"10-3 Secco's Oasis"</Description>
+              <Options moHideChildren="1"/>
+              <LastState Value="" RealAddress="00000000"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>76</ID>
+                  <Description>"Ranking"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                  <LastState Value="5" RealAddress="2059D8DC"/>
+                  <VariableType>Byte</VariableType>
+                  <Address>2059D8DC</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>77</ID>
+                  <Description>"Score"</Description>
+                  <LastState Value="200" RealAddress="2059D8DD"/>
+                  <VariableType>Byte</VariableType>
+                  <Address>2059D8DD</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>78</ID>
+              <Description>"11-1 His Name Is Diavolo"</Description>
+              <Options moHideChildren="1"/>
+              <LastState Value="" RealAddress="00000000"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>79</ID>
+                  <Description>"Ranking"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                  <LastState Value="5" RealAddress="2059D8E0"/>
+                  <VariableType>Byte</VariableType>
+                  <Address>2059D8E0</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>80</ID>
+                  <Description>"Score"</Description>
+                  <LastState Value="200" RealAddress="2059D8E1"/>
+                  <VariableType>Byte</VariableType>
+                  <Address>2059D8E1</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>81</ID>
+              <Description>"11-2 The Requiem Plays Quietly"</Description>
+              <Options moHideChildren="1"/>
+              <LastState Value="" RealAddress="00000000"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>82</ID>
+                  <Description>"Ranking"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                  <LastState Value="5" RealAddress="2059D8E4"/>
+                  <VariableType>Byte</VariableType>
+                  <Address>2059D8E4</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>83</ID>
+                  <Description>"Score"</Description>
+                  <LastState Value="200" RealAddress="2059D8E5"/>
+                  <VariableType>Byte</VariableType>
+                  <Address>2059D8E5</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>84</ID>
+              <Description>"11-3 King of Kings"</Description>
+              <Options moHideChildren="1"/>
+              <LastState Value="" RealAddress="00000000"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>85</ID>
+                  <Description>"Ranking"</Description>
+                  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                  <LastState Value="5" RealAddress="2059D8E8"/>
+                  <VariableType>Byte</VariableType>
+                  <Address>2059D8E8</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>86</ID>
+                  <Description>"Score"</Description>
+                  <LastState Value="200" RealAddress="2059D8E9"/>
+                  <VariableType>Byte</VariableType>
+                  <Address>2059D8E9</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>88</ID>
+          <Description>"Another Story"</Description>
+          <Options moHideChildren="1"/>
+          <LastState Value="" RealAddress="00000000"/>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>133</ID>
+              <Description>"Giorno"</Description>
+              <Options moHideChildren="1"/>
+              <LastState Value="" RealAddress="00000000"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>135</ID>
+                  <Description>"VS. Illuso"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>134</ID>
+                      <Description>"Ranking"</Description>
+                      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                      <LastState Value="5" RealAddress="2059D918"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059D918</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>136</ID>
+                      <Description>"Score"</Description>
+                      <LastState Value="100" RealAddress="2059D919"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059D919</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>137</ID>
+                  <Description>"VS. Prosciutto"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>138</ID>
+                      <Description>"Ranking"</Description>
+                      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                      <LastState Value="5" RealAddress="2059D91C"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059D91C</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>139</ID>
+                      <Description>"Score"</Description>
+                      <LastState Value="100" RealAddress="2059D91D"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059D91D</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>140</ID>
+                  <Description>"VS. Ghiaccio"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>141</ID>
+                      <Description>"Ranking"</Description>
+                      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                      <LastState Value="5" RealAddress="2059D938"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059D938</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>142</ID>
+                      <Description>"Score"</Description>
+                      <LastState Value="100" RealAddress="2059D939"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059D939</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>143</ID>
+                  <Description>"VS. The Boss"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>144</ID>
+                      <Description>"Ranking"</Description>
+                      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                      <LastState Value="5" RealAddress="2059D944"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059D944</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>145</ID>
+                      <Description>"Score"</Description>
+                      <LastState Value="100" RealAddress="2059D945"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059D945</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>148</ID>
+                  <Description>"VS. Notorious B.I.G. 1"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>146</ID>
+                      <Description>"Ranking"</Description>
+                      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                      <LastState Value="5" RealAddress="2059D954"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059D954</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>147</ID>
+                      <Description>"Score"</Description>
+                      <LastState Value="100" RealAddress="2059D955"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059D955</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>149</ID>
+                  <Description>"VS. Notorious B.I.G. 2"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>150</ID>
+                      <Description>"Ranking"</Description>
+                      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                      <LastState Value="5" RealAddress="2059D958"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059D958</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>151</ID>
+                      <Description>"Score"</Description>
+                      <LastState Value="100" RealAddress="2059D959"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059D959</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>152</ID>
+                  <Description>"VS. Cioccolata &amp; Secco"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>153</ID>
+                      <Description>"Ranking"</Description>
+                      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                      <LastState Value="5" RealAddress="2059D960"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059D960</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>154</ID>
+                      <Description>"Score"</Description>
+                      <LastState Value="100" RealAddress="2059D961"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059D961</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>155</ID>
+                  <Description>"VS. Requiem"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>156</ID>
+                      <Description>"Ranking"</Description>
+                      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                      <LastState Value="5" RealAddress="2059D974"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059D974</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>157</ID>
+                      <Description>"Score"</Description>
+                      <LastState Value="100" RealAddress="2059D975"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059D975</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>158</ID>
+              <Description>"Bucciarati"</Description>
+              <Options moHideChildren="1"/>
+              <LastState Value="" RealAddress="00000000"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>159</ID>
+                  <Description>"VS. Black Sabbath"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>160</ID>
+                      <Description>"Ranking"</Description>
+                      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                      <LastState Value="5" RealAddress="2059D98C"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059D98C</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>161</ID>
+                      <Description>"Score"</Description>
+                      <LastState Value="100" RealAddress="2059D98D"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059D98D</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>162</ID>
+                  <Description>"VS. Formaggio"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>163</ID>
+                      <Description>"Ranking"</Description>
+                      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                      <LastState Value="5" RealAddress="2059D99C"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059D99C</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>164</ID>
+                      <Description>"Score"</Description>
+                      <LastState Value="100" RealAddress="2059D99D"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059D99D</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>165</ID>
+                  <Description>"VS. Illuso"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>166</ID>
+                      <Description>"Ranking"</Description>
+                      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                      <LastState Value="5" RealAddress="2059D9A8"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059D9A8</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>167</ID>
+                      <Description>"Score"</Description>
+                      <LastState Value="100" RealAddress="2059D9A9"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059D9A9</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>168</ID>
+                  <Description>"VS. Notorious B.I.G. 1"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>169</ID>
+                      <Description>"Ranking"</Description>
+                      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                      <LastState Value="5" RealAddress="2059D9E4"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059D9E4</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>170</ID>
+                      <Description>"Score"</Description>
+                      <LastState Value="100" RealAddress="2059D9E5"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059D9E5</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>177</ID>
+                  <Description>"VS. Cioccolata &amp; Secco"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>178</ID>
+                      <Description>"Ranking"</Description>
+                      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                      <LastState Value="5" RealAddress="2059D9F0"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059D9F0</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>179</ID>
+                      <Description>"Score"</Description>
+                      <LastState Value="100" RealAddress="2059D9F1"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059D9F1</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>171</ID>
+                  <Description>"VS. Cioccolata"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>172</ID>
+                      <Description>"Ranking"</Description>
+                      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                      <LastState Value="5" RealAddress="2059D9F8"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059D9F8</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>173</ID>
+                      <Description>"Score"</Description>
+                      <LastState Value="100" RealAddress="2059D9F9"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059D9F9</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>174</ID>
+                  <Description>"VS. Diavolo"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>175</ID>
+                      <Description>"Ranking"</Description>
+                      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                      <LastState Value="5" RealAddress="2059DA08"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DA08</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>176</ID>
+                      <Description>"Score"</Description>
+                      <LastState Value="100" RealAddress="2059DA09"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DA09</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>181</ID>
+              <Description>"Mista"</Description>
+              <Options moHideChildren="1"/>
+              <LastState Value="" RealAddress="00000000"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>182</ID>
+                  <Description>"VS. Bucciarati"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>183</ID>
+                      <Description>"Ranking"</Description>
+                      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                      <LastState Value="5" RealAddress="2059DA18"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DA18</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>184</ID>
+                      <Description>"Score"</Description>
+                      <LastState Value="100" RealAddress="2059DA19"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DA19</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>185</ID>
+                  <Description>"VS. Formaggio"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>186</ID>
+                      <Description>"Ranking"</Description>
+                      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                      <LastState Value="5" RealAddress="2059DA2C"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DA2C</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>187</ID>
+                      <Description>"Score"</Description>
+                      <LastState Value="100" RealAddress="2059DA2D"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DA2D</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>188</ID>
+                  <Description>"VS. Prosciutto"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>189</ID>
+                      <Description>"Ranking"</Description>
+                      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                      <LastState Value="5" RealAddress="2059DA3C"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DA3C</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>190</ID>
+                      <Description>"Score"</Description>
+                      <LastState Value="100" RealAddress="2059DA3D"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DA3D</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>191</ID>
+                  <Description>"VS. Pesci"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>192</ID>
+                      <Description>"Ranking"</Description>
+                      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                      <LastState Value="5" RealAddress="2059DA40"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DA40</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>193</ID>
+                      <Description>"Score"</Description>
+                      <LastState Value="100" RealAddress="2059DA41"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DA41</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>194</ID>
+                  <Description>"VS. The Boss"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>195</ID>
+                      <Description>"Ranking"</Description>
+                      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                      <LastState Value="5" RealAddress="2059DA64"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DA64</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>196</ID>
+                      <Description>"Score"</Description>
+                      <LastState Value="100" RealAddress="2059DA65"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DA65</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>197</ID>
+                  <Description>"VS. Notorious B.I.G. 1"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>198</ID>
+                      <Description>"Ranking"</Description>
+                      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                      <LastState Value="5" RealAddress="2059DA74"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DA74</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>199</ID>
+                      <Description>"Score"</Description>
+                      <LastState Value="100" RealAddress="2059DA75"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DA75</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>203</ID>
+                  <Description>"VS. Notorious B.I.G. 2"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>204</ID>
+                      <Description>"Ranking"</Description>
+                      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                      <LastState Value="5" RealAddress="2059DA78"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DA78</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>205</ID>
+                      <Description>"Score"</Description>
+                      <LastState Value="100" RealAddress="2059DA79"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DA79</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>206</ID>
+                  <Description>"VS. Cioccolata"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>207</ID>
+                      <Description>"Ranking"</Description>
+                      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                      <LastState Value="5" RealAddress="2059DA88"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DA88</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>208</ID>
+                      <Description>"Score"</Description>
+                      <LastState Value="100" RealAddress="2059DA89"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DA89</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>209</ID>
+                  <Description>"VS. Secco"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>210</ID>
+                      <Description>"Ranking"</Description>
+                      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                      <LastState Value="5" RealAddress="2059DA8C"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DA8C</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>211</ID>
+                      <Description>"Score"</Description>
+                      <LastState Value="100" RealAddress="2059DA8D"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DA8D</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>200</ID>
+                  <Description>"VS. Requiem"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>201</ID>
+                      <Description>"Ranking"</Description>
+                      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                      <LastState Value="5" RealAddress="2059DA94"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DA94</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>202</ID>
+                      <Description>"Score"</Description>
+                      <LastState Value="100" RealAddress="2059DA95"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DA95</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>212</ID>
+              <Description>"Narancia"</Description>
+              <Options moHideChildren="1"/>
+              <LastState Value="" RealAddress="00000000"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>213</ID>
+                  <Description>"VS. Bucciarati"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>214</ID>
+                      <Description>"Ranking"</Description>
+                      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                      <LastState Value="5" RealAddress="2059DAA8"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DAA8</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>215</ID>
+                      <Description>"Score"</Description>
+                      <LastState Value="100" RealAddress="2059DAA9"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DAA9</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>216</ID>
+                  <Description>"VS. Illuso"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>217</ID>
+                      <Description>"Ranking"</Description>
+                      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                      <LastState Value="5" RealAddress="2059DAC8"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DAC8</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>218</ID>
+                      <Description>"Score"</Description>
+                      <LastState Value="100" RealAddress="2059DAC9"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DAC9</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>219</ID>
+                  <Description>"VS. Pesci"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>220</ID>
+                      <Description>"Ranking"</Description>
+                      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                      <LastState Value="5" RealAddress="2059DAD0"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DAD0</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>221</ID>
+                      <Description>"Score"</Description>
+                      <LastState Value="100" RealAddress="2059DAD1"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DAD1</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>222</ID>
+                  <Description>"VS. Ghiaccio"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>223</ID>
+                      <Description>"Ranking"</Description>
+                      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                      <LastState Value="5" RealAddress="2059DAE8"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DAE8</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>224</ID>
+                      <Description>"Score"</Description>
+                      <LastState Value="100" RealAddress="2059DAE9"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DAE9</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>225</ID>
+                  <Description>"VS. Notorious B.I.G. 1"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>226</ID>
+                      <Description>"Ranking"</Description>
+                      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                      <LastState Value="5" RealAddress="2059DB04"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DB04</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>227</ID>
+                      <Description>"Score"</Description>
+                      <LastState Value="100" RealAddress="2059DB05"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DB05</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>228</ID>
+                  <Description>"VS. Notorious B.I.G. 2"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>229</ID>
+                      <Description>"Ranking"</Description>
+                      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                      <LastState Value="5" RealAddress="2059DB08"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DB08</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>230</ID>
+                      <Description>"Score"</Description>
+                      <LastState Value="100" RealAddress="2059DB09"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DB09</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>231</ID>
+                  <Description>"VS. Cioccolata"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>232</ID>
+                      <Description>"Ranking"</Description>
+                      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                      <LastState Value="5" RealAddress="2059DB18"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DB18</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>233</ID>
+                      <Description>"Score"</Description>
+                      <LastState Value="100" RealAddress="2059DB19"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DB19</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>234</ID>
+                  <Description>"VS. Secco"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>235</ID>
+                      <Description>"Ranking"</Description>
+                      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                      <LastState Value="5" RealAddress="2059DB1C"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DB1C</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>236</ID>
+                      <Description>"Score"</Description>
+                      <LastState Value="100" RealAddress="2059DB1D"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DB1D</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>237</ID>
+                  <Description>"VS. Requiem"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>238</ID>
+                      <Description>"Ranking"</Description>
+                      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                      <LastState Value="5" RealAddress="2059DB24"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DB24</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>239</ID>
+                      <Description>"Score"</Description>
+                      <LastState Value="100" RealAddress="2059DB25"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DB25</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>240</ID>
+                  <Description>"VS. Diavolo"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>241</ID>
+                      <Description>"Ranking"</Description>
+                      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                      <LastState Value="5" RealAddress="2059DB28"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DB28</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>242</ID>
+                      <Description>"Score"</Description>
+                      <LastState Value="100" RealAddress="2059DB29"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DB29</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>243</ID>
+              <Description>"Abbachio"</Description>
+              <Options moHideChildren="1"/>
+              <LastState Value="" RealAddress="00000000"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>244</ID>
+                  <Description>"VS. Bucciarati"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>245</ID>
+                      <Description>"Ranking"</Description>
+                      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                      <LastState Value="5" RealAddress="2059DB38"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DB38</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>246</ID>
+                      <Description>"Score"</Description>
+                      <LastState Value="100" RealAddress="2059DB39"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DB39</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>247</ID>
+                  <Description>"VS. Black Sabbath"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>248</ID>
+                      <Description>"Ranking"</Description>
+                      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                      <LastState Value="5" RealAddress="2059DB3C"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DB3C</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>249</ID>
+                      <Description>"Score"</Description>
+                      <LastState Value="100" RealAddress="2059DB3D"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DB3D</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>250</ID>
+                  <Description>"VS. Prosciutto"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>251</ID>
+                      <Description>"Ranking"</Description>
+                      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                      <LastState Value="5" RealAddress="2059DB5C"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DB5C</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>252</ID>
+                      <Description>"Score"</Description>
+                      <LastState Value="100" RealAddress="2059DB5D"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DB5D</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>253</ID>
+                  <Description>"VS. Pesci"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>254</ID>
+                      <Description>"Ranking"</Description>
+                      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                      <LastState Value="5" RealAddress="2059DB60"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DB60</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>255</ID>
+                      <Description>"Score"</Description>
+                      <LastState Value="100" RealAddress="2059DB61"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DB61</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>256</ID>
+                  <Description>"VS. Cioccolata &amp; Secco"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>257</ID>
+                      <Description>"Ranking"</Description>
+                      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                      <LastState Value="5" RealAddress="2059DBA0"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DBA0</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>258</ID>
+                      <Description>"Score"</Description>
+                      <LastState Value="100" RealAddress="2059DBA1"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DBA1</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>262</ID>
+                  <Description>"VS. Cioccolata"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>263</ID>
+                      <Description>"Ranking"</Description>
+                      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                      <LastState Value="5" RealAddress="2059DBA8"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DBA8</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>264</ID>
+                      <Description>"Score"</Description>
+                      <LastState Value="100" RealAddress="2059DBA9"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DBA9</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>265</ID>
+                  <Description>"VS. Secco"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>266</ID>
+                      <Description>"Ranking"</Description>
+                      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                      <LastState Value="5" RealAddress="2059DBAC"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DBAC</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>267</ID>
+                      <Description>"Score"</Description>
+                      <LastState Value="100" RealAddress="2059DBAD"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DBAD</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>271</ID>
+                  <Description>"VS. Diavolo"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>272</ID>
+                      <Description>"Ranking"</Description>
+                      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                      <LastState Value="5" RealAddress="2059DBB8"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DBB8</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>273</ID>
+                      <Description>"Score"</Description>
+                      <LastState Value="100" RealAddress="2059DBB9"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DBB9</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>274</ID>
+              <Description>"Fugo"</Description>
+              <Options moHideChildren="1"/>
+              <LastState Value="" RealAddress="00000000"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>275</ID>
+                  <Description>"VS. Bucciarati"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>276</ID>
+                      <Description>"Ranking"</Description>
+                      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                      <LastState Value="5" RealAddress="2059DBC8"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DBC8</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>277</ID>
+                      <Description>"Score"</Description>
+                      <LastState Value="100" RealAddress="2059DBC9"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DBC9</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>278</ID>
+                  <Description>"VS. Black Sabbath"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>279</ID>
+                      <Description>"Ranking"</Description>
+                      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                      <LastState Value="5" RealAddress="2059DBCC"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DBCC</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>280</ID>
+                      <Description>"Score"</Description>
+                      <LastState Value="100" RealAddress="2059DBCD"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DBCD</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>281</ID>
+                  <Description>"VS. Formaggio"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>282</ID>
+                      <Description>"Ranking"</Description>
+                      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                      <LastState Value="5" RealAddress="2059DBDC"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DBDC</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>283</ID>
+                      <Description>"Score"</Description>
+                      <LastState Value="100" RealAddress="2059DBDD"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DBDD</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>284</ID>
+                  <Description>"VS. Pesci"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>285</ID>
+                      <Description>"Ranking"</Description>
+                      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                      <LastState Value="5" RealAddress="2059DBF0"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DBF0</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>286</ID>
+                      <Description>"Score"</Description>
+                      <LastState Value="100" RealAddress="2059DBF1"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DBF1</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>299</ID>
+                  <Description>"VS. Ghiaccio"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>300</ID>
+                      <Description>"Ranking"</Description>
+                      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                      <LastState Value="5" RealAddress="2059DC08"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DC08</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>301</ID>
+                      <Description>"Score"</Description>
+                      <LastState Value="100" RealAddress="2059DC09"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DC09</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>302</ID>
+                  <Description>"VS. The Boss"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>303</ID>
+                      <Description>"Ranking"</Description>
+                      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                      <LastState Value="5" RealAddress="2059DC14"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DC14</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>304</ID>
+                      <Description>"Score"</Description>
+                      <LastState Value="100" RealAddress="2059DC15"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DC15</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>296</ID>
+                  <Description>"VS. Requiem"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>297</ID>
+                      <Description>"Ranking"</Description>
+                      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                      <LastState Value="5" RealAddress="2059DC44"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DC44</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>298</ID>
+                      <Description>"Score"</Description>
+                      <LastState Value="100" RealAddress="2059DC45"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DC45</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>305</ID>
+              <Description>"Trish"</Description>
+              <Options moHideChildren="1"/>
+              <LastState Value="" RealAddress="00000000"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>309</ID>
+                  <Description>"VS. Black Sabbath"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>310</ID>
+                      <Description>"Ranking"</Description>
+                      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                      <LastState Value="5" RealAddress="2059DC5C"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DC5C</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>311</ID>
+                      <Description>"Score"</Description>
+                      <LastState Value="100" RealAddress="2059DC5D"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DC5D</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>312</ID>
+                  <Description>"VS. Formaggio"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>313</ID>
+                      <Description>"Ranking"</Description>
+                      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                      <LastState Value="5" RealAddress="2059DC6C"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DC6C</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>314</ID>
+                      <Description>"Score"</Description>
+                      <LastState Value="100" RealAddress="2059DC6D"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DC6D</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>306</ID>
+                  <Description>"VS. Illuso"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>307</ID>
+                      <Description>"Ranking"</Description>
+                      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                      <LastState Value="5" RealAddress="2059DC78"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DC78</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>308</ID>
+                      <Description>"Score"</Description>
+                      <LastState Value="100" RealAddress="2059DC79"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DC79</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>315</ID>
+                  <Description>"VS. Prosciutto"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>316</ID>
+                      <Description>"Ranking"</Description>
+                      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                      <LastState Value="5" RealAddress="2059DC7C"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DC7C</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>317</ID>
+                      <Description>"Score"</Description>
+                      <LastState Value="100" RealAddress="2059DC7D"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DC7D</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>318</ID>
+                  <Description>"VS. Cioccolata &amp; Secco"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>319</ID>
+                      <Description>"Ranking"</Description>
+                      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                      <LastState Value="5" RealAddress="2059DCC0"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DCC0</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>320</ID>
+                      <Description>"Score"</Description>
+                      <LastState Value="100" RealAddress="2059DCC1"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DCC1</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>321</ID>
+                  <Description>"VS. Secco"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>322</ID>
+                      <Description>"Ranking"</Description>
+                      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                      <LastState Value="5" RealAddress="2059DCCC"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DCCC</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>323</ID>
+                      <Description>"Score"</Description>
+                      <LastState Value="100" RealAddress="2059DCCD"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DCCD</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>324</ID>
+                  <Description>"VS. Diavolo"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>325</ID>
+                      <Description>"Ranking"</Description>
+                      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                      <LastState Value="5" RealAddress="2059DCD8"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DCD8</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>326</ID>
+                      <Description>"Score"</Description>
+                      <LastState Value="100" RealAddress="2059DCD9"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DCD9</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>327</ID>
+              <Description>"Polnareff"</Description>
+              <Options moHideChildren="1"/>
+              <LastState Value="" RealAddress="00000000"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>328</ID>
+                  <Description>"VS. Ghiaccio"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>329</ID>
+                      <Description>"Ranking"</Description>
+                      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                      <LastState Value="5" RealAddress="2059DD28"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DD28</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>330</ID>
+                      <Description>"Score"</Description>
+                      <LastState Value="100" RealAddress="2059DD29"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DD29</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>331</ID>
+                  <Description>"VS. The Boss"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>332</ID>
+                      <Description>"Ranking"</Description>
+                      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                      <LastState Value="5" RealAddress="2059DD34"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DD34</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>333</ID>
+                      <Description>"Score"</Description>
+                      <LastState Value="100" RealAddress="2059DD35"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DD35</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>334</ID>
+                  <Description>"VS. Notorious B.I.G. 2"</Description>
+                  <Options moHideChildren="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>335</ID>
+                      <Description>"Ranking"</Description>
+                      <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:E
+1:D
+2:C
+3:B
+4:A
+5:S
+</DropDownList>
+                      <LastState Value="5" RealAddress="2059DD48"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DD48</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>336</ID>
+                      <Description>"Score"</Description>
+                      <LastState Value="100" RealAddress="2059DD49"/>
+                      <VariableType>Byte</VariableType>
+                      <Address>2059DD49</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>27</ID>
+      <Description>"Text Dump"</Description>
+      <Options moHideChildren="1"/>
+      <LastState Value="" RealAddress="00000000"/>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>28</ID>
+          <Description>"Chapter Titles"</Description>
+          <LastState RealAddress="2034FFC0"/>
+          <VariableType>String</VariableType>
+          <Length>0</Length>
+          <Unicode>0</Unicode>
+          <CodePage>0</CodePage>
+          <ZeroTerminate>1</ZeroTerminate>
+          <Address>2034FFC0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>47</ID>
+          <Description>"Another Story VS Titles"</Description>
+          <LastState RealAddress="2035E4C0"/>
+          <VariableType>String</VariableType>
+          <Length>0</Length>
+          <Unicode>0</Unicode>
+          <CodePage>0</CodePage>
+          <ZeroTerminate>1</ZeroTerminate>
+          <Address>2035E4C0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>109</ID>
+          <Description>"Results Screen Chapter Titles"</Description>
+          <LastState RealAddress="2034E260"/>
+          <VariableType>String</VariableType>
+          <Length>0</Length>
+          <Unicode>0</Unicode>
+          <CodePage>0</CodePage>
+          <ZeroTerminate>1</ZeroTerminate>
+          <Address>2034E260</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>114</ID>
+          <Description>"Stand Stats (Idle Flairs)"</Description>
+          <Options moHideChildren="1"/>
+          <LastState RealAddress="2035CF60"/>
+          <VariableType>String</VariableType>
+          <Length>0</Length>
+          <Unicode>0</Unicode>
+          <CodePage>0</CodePage>
+          <ZeroTerminate>1</ZeroTerminate>
+          <Address>2035CF60</Address>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>115</ID>
+              <Description>"Gold Experience description"</Description>
+              <LastState RealAddress="2035D050"/>
+              <VariableType>String</VariableType>
+              <Length>24904</Length>
+              <Unicode>0</Unicode>
+              <CodePage>0</CodePage>
+              <ZeroTerminate>1</ZeroTerminate>
+              <Address>2035D050</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>116</ID>
+              <Description>"Sticky Fingers description"</Description>
+              <LastState RealAddress="2035D200"/>
+              <VariableType>String</VariableType>
+              <Length>24904</Length>
+              <Unicode>0</Unicode>
+              <CodePage>0</CodePage>
+              <ZeroTerminate>1</ZeroTerminate>
+              <Address>2035D200</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>117</ID>
+              <Description>"Sex Pistols description"</Description>
+              <LastState RealAddress="2035D390"/>
+              <VariableType>String</VariableType>
+              <Length>24904</Length>
+              <Unicode>0</Unicode>
+              <CodePage>0</CodePage>
+              <ZeroTerminate>1</ZeroTerminate>
+              <Address>2035D390</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>118</ID>
+              <Description>"Aerosmith description"</Description>
+              <LastState RealAddress="2035D510"/>
+              <VariableType>String</VariableType>
+              <Length>24904</Length>
+              <Unicode>0</Unicode>
+              <CodePage>0</CodePage>
+              <ZeroTerminate>1</ZeroTerminate>
+              <Address>2035D510</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>119</ID>
+              <Description>"Moody Blues description"</Description>
+              <LastState RealAddress="2035D6C0"/>
+              <VariableType>String</VariableType>
+              <Length>24904</Length>
+              <Unicode>0</Unicode>
+              <CodePage>0</CodePage>
+              <ZeroTerminate>1</ZeroTerminate>
+              <Address>2035D6C0</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>120</ID>
+              <Description>"Purple Haze description"</Description>
+              <LastState RealAddress="2035D860"/>
+              <VariableType>String</VariableType>
+              <Length>24904</Length>
+              <Unicode>0</Unicode>
+              <CodePage>0</CodePage>
+              <ZeroTerminate>1</ZeroTerminate>
+              <Address>2035D860</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>121</ID>
+              <Description>"Spice Girl description"</Description>
+              <LastState RealAddress="2035DA00"/>
+              <VariableType>String</VariableType>
+              <Length>24904</Length>
+              <Unicode>0</Unicode>
+              <CodePage>0</CodePage>
+              <ZeroTerminate>1</ZeroTerminate>
+              <Address>2035DA00</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>342</ID>
+          <Description>"Secret Factors"</Description>
+          <LastState RealAddress="2034E5E0"/>
+          <VariableType>String</VariableType>
+          <Length>0</Length>
+          <Unicode>0</Unicode>
+          <CodePage>0</CodePage>
+          <ZeroTerminate>1</ZeroTerminate>
+          <Address>2034E5E0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>372</ID>
+          <Description>"Credits"</Description>
+          <LastState RealAddress="2035E710"/>
+          <VariableType>String</VariableType>
+          <Length>0</Length>
+          <Unicode>0</Unicode>
+          <CodePage>0</CodePage>
+          <ZeroTerminate>1</ZeroTerminate>
+          <Address>2035E710</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>105</ID>
+          <Description>"Super Story Desc"</Description>
+          <LastState RealAddress="2034DD20"/>
+          <VariableType>String</VariableType>
+          <Length>96</Length>
+          <Unicode>0</Unicode>
+          <CodePage>0</CodePage>
+          <ZeroTerminate>1</ZeroTerminate>
+          <Address>2034DD20</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>106</ID>
+          <Description>"Another Story Desc"</Description>
+          <LastState RealAddress="2034DD80"/>
+          <VariableType>String</VariableType>
+          <Length>96</Length>
+          <Unicode>0</Unicode>
+          <CodePage>0</CodePage>
+          <ZeroTerminate>1</ZeroTerminate>
+          <Address>2034DD80</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>107</ID>
+          <Description>"Gallery Desc"</Description>
+          <Options moManualExpandCollapse="1"/>
+          <LastState RealAddress="2034DDE0"/>
+          <VariableType>String</VariableType>
+          <Length>96</Length>
+          <Unicode>0</Unicode>
+          <CodePage>0</CodePage>
+          <ZeroTerminate>1</ZeroTerminate>
+          <Address>2034DDE0</Address>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>376</ID>
+              <Description>"Gallery Titles"</Description>
+              <LastState RealAddress="20348139"/>
+              <VariableType>String</VariableType>
+              <Length>0</Length>
+              <Unicode>0</Unicode>
+              <CodePage>0</CodePage>
+              <ZeroTerminate>1</ZeroTerminate>
+              <Address>20348139</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>108</ID>
+          <Description>"Options Desc"</Description>
+          <Options moManualExpandCollapse="1"/>
+          <LastState RealAddress="2034DE40"/>
+          <VariableType>String</VariableType>
+          <Length>96</Length>
+          <Unicode>0</Unicode>
+          <CodePage>0</CodePage>
+          <ZeroTerminate>1</ZeroTerminate>
+          <Address>2034DE40</Address>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>103</ID>
+              <Description>"Options - Game"</Description>
+              <LastState RealAddress="2034DF00"/>
+              <VariableType>String</VariableType>
+              <Length>32</Length>
+              <Unicode>0</Unicode>
+              <CodePage>0</CodePage>
+              <ZeroTerminate>1</ZeroTerminate>
+              <Address>2034DF00</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>102</ID>
+              <Description>"Options - Controller"</Description>
+              <Options moManualExpandCollapse="1"/>
+              <LastState RealAddress="2034DF20"/>
+              <VariableType>String</VariableType>
+              <Length>32</Length>
+              <Unicode>0</Unicode>
+              <CodePage>0</CodePage>
+              <ZeroTerminate>1</ZeroTerminate>
+              <Address>2034DF20</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>337</ID>
+                  <Description>"Switch Mode Desc"</Description>
+                  <LastState RealAddress="2034E040"/>
+                  <VariableType>String</VariableType>
+                  <Length>46</Length>
+                  <Unicode>0</Unicode>
+                  <CodePage>0</CodePage>
+                  <ZeroTerminate>1</ZeroTerminate>
+                  <Address>2034E040</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>338</ID>
+                  <Description>"Hold Mode Desc"</Description>
+                  <LastState RealAddress="2034E080"/>
+                  <VariableType>String</VariableType>
+                  <Length>66</Length>
+                  <Unicode>0</Unicode>
+                  <CodePage>0</CodePage>
+                  <ZeroTerminate>1</ZeroTerminate>
+                  <Address>2034E080</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>101</ID>
+              <Description>"Options - Save"</Description>
+              <LastState RealAddress="2034DF40"/>
+              <VariableType>String</VariableType>
+              <Length>112</Length>
+              <Unicode>0</Unicode>
+              <CodePage>0</CodePage>
+              <ZeroTerminate>1</ZeroTerminate>
+              <Address>2034DF40</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>104</ID>
+              <Description>"Options - Save Changes"</Description>
+              <LastState RealAddress="2034DA40"/>
+              <VariableType>String</VariableType>
+              <Length>64</Length>
+              <Unicode>0</Unicode>
+              <CodePage>0</CodePage>
+              <ZeroTerminate>1</ZeroTerminate>
+              <Address>2034DA40</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>94</ID>
+          <Description>"Sound Test Desc"</Description>
+          <Options moManualExpandCollapse="1"/>
+          <LastState RealAddress="203549D0"/>
+          <VariableType>String</VariableType>
+          <Length>96</Length>
+          <Unicode>0</Unicode>
+          <CodePage>0</CodePage>
+          <ZeroTerminate>1</ZeroTerminate>
+          <Address>203549D0</Address>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>131</ID>
+              <Description>"Sound Test BGM List"</Description>
+              <LastState RealAddress="2035BE20"/>
+              <VariableType>String</VariableType>
+              <Length>0</Length>
+              <Unicode>0</Unicode>
+              <CodePage>0</CodePage>
+              <ZeroTerminate>1</ZeroTerminate>
+              <Address>2035BE20</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>360</ID>
+              <Description>"Sound Test SFX List"</Description>
+              <LastState RealAddress="2035C300"/>
+              <VariableType>String</VariableType>
+              <Length>0</Length>
+              <Unicode>0</Unicode>
+              <CodePage>0</CodePage>
+              <ZeroTerminate>1</ZeroTerminate>
+              <Address>2035C300</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>112</ID>
+              <Description>"Sound Test Voice Char. List"</Description>
+              <LastState RealAddress="20355E00"/>
+              <VariableType>String</VariableType>
+              <Length>0</Length>
+              <Unicode>0</Unicode>
+              <CodePage>0</CodePage>
+              <ZeroTerminate>1</ZeroTerminate>
+              <Address>20355E00</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>377</ID>
+              <Description>"Sound Test Voice List"</Description>
+              <LastState RealAddress="203560C0"/>
+              <VariableType>String</VariableType>
+              <Length>0</Length>
+              <Unicode>0</Unicode>
+              <CodePage>0</CodePage>
+              <ZeroTerminate>1</ZeroTerminate>
+              <Address>203560C0</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>95</ID>
+          <Description>"Concept Art Desc"</Description>
+          <Options moManualExpandCollapse="1"/>
+          <LastState RealAddress="20354A30"/>
+          <VariableType>String</VariableType>
+          <Length>96</Length>
+          <Unicode>0</Unicode>
+          <CodePage>0</CodePage>
+          <ZeroTerminate>1</ZeroTerminate>
+          <Address>20354A30</Address>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>339</ID>
+              <Description>"Concept Art List"</Description>
+              <LastState RealAddress="2035CA40"/>
+              <VariableType>String</VariableType>
+              <Length>0</Length>
+              <Unicode>0</Unicode>
+              <CodePage>0</CodePage>
+              <ZeroTerminate>1</ZeroTerminate>
+              <Address>2035CA40</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>96</ID>
+          <Description>"Cutscene Viewer Desc"</Description>
+          <Options moManualExpandCollapse="1"/>
+          <LastState RealAddress="20354A90"/>
+          <VariableType>String</VariableType>
+          <Length>96</Length>
+          <Unicode>0</Unicode>
+          <CodePage>0</CodePage>
+          <ZeroTerminate>1</ZeroTerminate>
+          <Address>20354A90</Address>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>110</ID>
+              <Description>"Cutscene Viewer List"</Description>
+              <LastState RealAddress="20354618"/>
+              <VariableType>String</VariableType>
+              <Length>0</Length>
+              <Unicode>0</Unicode>
+              <CodePage>0</CodePage>
+              <ZeroTerminate>1</ZeroTerminate>
+              <Address>20354618</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>97</ID>
+          <Description>"Model Viewer Desc"</Description>
+          <Options moManualExpandCollapse="1"/>
+          <LastState RealAddress="20354AF0"/>
+          <VariableType>String</VariableType>
+          <Length>96</Length>
+          <Unicode>0</Unicode>
+          <CodePage>0</CodePage>
+          <ZeroTerminate>1</ZeroTerminate>
+          <Address>20354AF0</Address>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>111</ID>
+              <Description>"Model Viewer Model List"</Description>
+              <LastState RealAddress="20354C60"/>
+              <VariableType>String</VariableType>
+              <Length>0</Length>
+              <Unicode>0</Unicode>
+              <CodePage>0</CodePage>
+              <ZeroTerminate>1</ZeroTerminate>
+              <Address>20354C60</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>132</ID>
+              <Description>"Model Viewer Action List"</Description>
+              <LastState RealAddress="20355530"/>
+              <VariableType>String</VariableType>
+              <Length>0</Length>
+              <Unicode>0</Unicode>
+              <CodePage>0</CodePage>
+              <ZeroTerminate>1</ZeroTerminate>
+              <Address>20355530</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>98</ID>
+          <Description>"Stage Viewer Desc"</Description>
+          <Options moManualExpandCollapse="1"/>
+          <LastState RealAddress="20354B90"/>
+          <VariableType>String</VariableType>
+          <Length>96</Length>
+          <Unicode>0</Unicode>
+          <CodePage>0</CodePage>
+          <ZeroTerminate>1</ZeroTerminate>
+          <Address>20354B90</Address>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>374</ID>
+              <Description>"Stage Viewer List"</Description>
+              <LastState RealAddress="20348280"/>
+              <VariableType>String</VariableType>
+              <Length>0</Length>
+              <Unicode>0</Unicode>
+              <CodePage>0</CodePage>
+              <ZeroTerminate>1</ZeroTerminate>
+              <Address>20348280</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>99</ID>
+          <Description>"Special Illustrations Desc"</Description>
+          <LastState RealAddress="20354BF0"/>
+          <VariableType>String</VariableType>
+          <Length>96</Length>
+          <Unicode>0</Unicode>
+          <CodePage>0</CodePage>
+          <ZeroTerminate>1</ZeroTerminate>
+          <Address>20354BF0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>100</ID>
+          <Description>"Special Drawings Desc"</Description>
+          <LastState RealAddress="20354950"/>
+          <VariableType>String</VariableType>
+          <Length>96</Length>
+          <Unicode>0</Unicode>
+          <CodePage>0</CodePage>
+          <ZeroTerminate>1</ZeroTerminate>
+          <Address>20354950</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>32</ID>
+          <Description>"Save Options (Advanced)"</Description>
+          <LastState RealAddress="2034D3F0"/>
+          <ShowAsHex>1</ShowAsHex>
+          <VariableType>String</VariableType>
+          <Length>0</Length>
+          <Unicode>0</Unicode>
+          <CodePage>0</CodePage>
+          <ZeroTerminate>1</ZeroTerminate>
+          <Address>2034D3F0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>396</ID>
+          <Description>"Current Cutscene Text"</Description>
+          <LastState RealAddress="202FC2B8"/>
+          <ShowAsHex>1</ShowAsHex>
+          <VariableType>String</VariableType>
+          <Length>100</Length>
+          <Unicode>0</Unicode>
+          <CodePage>0</CodePage>
+          <ZeroTerminate>1</ZeroTerminate>
+          <Address>202FC2B8</Address>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>419</ID>
+      <Description>"Stored Data"</Description>
+      <Options moHideChildren="1"/>
+      <LastState Value="" Activated="1" RealAddress="00000000"/>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>400</ID>
+          <Description>"Animation Data"</Description>
+          <LastState Value="" RealAddress="209D5D4C"/>
+          <VariableType>Array of byte</VariableType>
+          <ByteLength>0</ByteLength>
+          <Address>209D5D4C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>402</ID>
+          <Description>"Camera Data"</Description>
+          <LastState Value="" RealAddress="203F2C94"/>
+          <VariableType>Array of byte</VariableType>
+          <ByteLength>0</ByteLength>
+          <Address>203F2C94</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>405</ID>
+          <Description>"Cutscene Data"</Description>
+          <LastState Value="" RealAddress="205AC318"/>
+          <ShowAsHex>1</ShowAsHex>
+          <VariableType>Array of byte</VariableType>
+          <ByteLength>0</ByteLength>
+          <Address>205AC318</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>403</ID>
+          <Description>"Model Viewer Character List"</Description>
+          <LastState Value="" RealAddress="203440E0"/>
+          <ShowAsHex>1</ShowAsHex>
+          <VariableType>Array of byte</VariableType>
+          <ByteLength>0</ByteLength>
+          <Address>203440E0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>180</ID>
+          <Description>"Another Story Character Portraits"</Description>
+          <LastState Value="" RealAddress="20344510"/>
+          <VariableType>Array of byte</VariableType>
+          <ByteLength>0</ByteLength>
+          <Address>20344510</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>369</ID>
+          <Description>"Another Story Stage List"</Description>
+          <LastState Value="" RealAddress="20344478"/>
+          <ShowAsHex>1</ShowAsHex>
+          <VariableType>Array of byte</VariableType>
+          <ByteLength>0</ByteLength>
+          <Address>20344478</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>395</ID>
+          <Description>"Texture Loading Zone"</Description>
+          <LastState Value="" RealAddress="206874C0"/>
+          <VariableType>Array of byte</VariableType>
+          <ByteLength>0</ByteLength>
+          <Address>206874C0</Address>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>345</ID>
+      <Description>"Misc"</Description>
+      <Options moHideChildren="1"/>
+      <LastState Value="" Activated="1" RealAddress="00000000"/>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>373</ID>
+          <Description>"Current Demo"</Description>
+          <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">255:None
+0:Giorno
+1:Bucciarati
+2:Mista
+3:Narancia
+4:Abbachio
+5:Fugo
+6:Trish
+</DropDownList>
+          <LastState Value="255" RealAddress="2059DE64"/>
+          <VariableType>Byte</VariableType>
+          <Address>2059DE64</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>355</ID>
+          <Description>"Music Volume Adjustment"</Description>
+          <LastState Value="0" RealAddress="20335CD8"/>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>20335CD8</Address>
+          <Hotkeys>
+            <Hotkey>
+              <Action>Activate</Action>
+              <Keys>
+                <Key>17</Key>
+                <Key>68</Key>
+              </Keys>
+              <ID>2</ID>
+            </Hotkey>
+            <Hotkey>
+              <Action>Set Value</Action>
+              <Keys>
+                <Key>17</Key>
+                <Key>68</Key>
+              </Keys>
+              <Value>[readSmallInteger(542761138)*-3]</Value>
+              <ID>3</ID>
+            </Hotkey>
+            <Hotkey>
+              <Action>Deactivate</Action>
+              <Keys>
+                <Key>17</Key>
+                <Key>16</Key>
+                <Key>68</Key>
+              </Keys>
+              <ID>4</ID>
+            </Hotkey>
+            <Hotkey>
+              <Action>Set Value</Action>
+              <Keys>
+                <Key>17</Key>
+                <Key>16</Key>
+                <Key>68</Key>
+              </Keys>
+              <Value>0</Value>
+              <ID>5</ID>
+            </Hotkey>
+            <Hotkey>
+              <Action>Activate</Action>
+              <Keys>
+                <Key>17</Key>
+                <Key>69</Key>
+              </Keys>
+              <ID>6</ID>
+            </Hotkey>
+            <Hotkey>
+              <Action>Set Value</Action>
+              <Keys>
+                <Key>17</Key>
+                <Key>69</Key>
+              </Keys>
+              <Value>[readSmallInteger(542761138)*-1]</Value>
+              <ID>7</ID>
+            </Hotkey>
+            <Hotkey>
+              <Action>Deactivate</Action>
+              <Keys>
+                <Key>17</Key>
+                <Key>16</Key>
+                <Key>69</Key>
+              </Keys>
+              <ID>0</ID>
+            </Hotkey>
+            <Hotkey>
+              <Action>Set Value</Action>
+              <Keys>
+                <Key>17</Key>
+                <Key>16</Key>
+                <Key>69</Key>
+              </Keys>
+              <Value>0</Value>
+              <ID>1</ID>
+            </Hotkey>
+            <Hotkey>
+              <Action>Activate</Action>
+              <Keys>
+                <Key>17</Key>
+                <Key>18</Key>
+                <Key>69</Key>
+              </Keys>
+              <ID>8</ID>
+            </Hotkey>
+            <Hotkey>
+              <Action>Set Value</Action>
+              <Keys>
+                <Key>17</Key>
+                <Key>18</Key>
+                <Key>69</Key>
+              </Keys>
+              <Value>-114</Value>
+              <ID>9</ID>
+            </Hotkey>
+            <Hotkey>
+              <Action>Activate</Action>
+              <Keys>
+                <Key>17</Key>
+                <Key>18</Key>
+                <Key>68</Key>
+              </Keys>
+              <ID>10</ID>
+            </Hotkey>
+            <Hotkey>
+              <Action>Set Value</Action>
+              <Keys>
+                <Key>17</Key>
+                <Key>18</Key>
+                <Key>68</Key>
+              </Keys>
+              <Value>(Slowdown Timer)</Value>
+              <ID>11</ID>
+            </Hotkey>
+          </Hotkeys>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>354</ID>
+          <Description>"Music Playing"</Description>
+          <LastState Value="1" RealAddress="20335CCC"/>
+          <VariableType>Byte</VariableType>
+          <Address>20335CCC</Address>
+          <Hotkeys>
+            <Hotkey>
+              <Action>Set Value</Action>
+              <Keys>
+                <Key>17</Key>
+                <Key>77</Key>
+              </Keys>
+              <Value>0</Value>
+              <ID>0</ID>
+            </Hotkey>
+            <Hotkey>
+              <Action>Set Value</Action>
+              <Keys>
+                <Key>17</Key>
+                <Key>16</Key>
+                <Key>77</Key>
+              </Keys>
+              <Value>1</Value>
+              <ID>1</ID>
+            </Hotkey>
+          </Hotkeys>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>384</ID>
+          <Description>"Gallery Selection"</Description>
+          <LastState Value="20" RealAddress="205B6494"/>
+          <VariableType>Byte</VariableType>
+          <Address>205B6494</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>424</ID>
+          <Description>"Gameplay"</Description>
+          <Options moHideChildren="1"/>
+          <LastState Value="" Activated="1" RealAddress="00000000"/>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>382</ID>
+              <Description>"Game State"</Description>
+              <LastState Value="1" RealAddress="2059DD91"/>
+              <VariableType>Byte</VariableType>
+              <Address>2059DD91</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>404</ID>
+              <Description>"Game Mode"</Description>
+              <LastState Value="00" RealAddress="2059DD9A"/>
+              <ShowAsHex>1</ShowAsHex>
+              <VariableType>Byte</VariableType>
+              <Address>2059DD9A</Address>
+              <Hotkeys>
+                <Hotkey>
+                  <Action>Set Value</Action>
+                  <Keys>
+                    <Key>17</Key>
+                    <Key>74</Key>
+                  </Keys>
+                  <Value>0</Value>
+                  <Description>Gameplay</Description>
+                  <ID>0</ID>
+                </Hotkey>
+                <Hotkey>
+                  <Action>Set Value</Action>
+                  <Keys>
+                    <Key>17</Key>
+                    <Key>75</Key>
+                  </Keys>
+                  <Value>2</Value>
+                  <Description>Cutscene</Description>
+                  <ID>1</ID>
+                </Hotkey>
+              </Hotkeys>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>381</ID>
+              <Description>"Tutorial Phase"</Description>
+              <LastState Value="0" RealAddress="205B5F10"/>
+              <VariableType>Byte</VariableType>
+              <Address>205B5F10</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>344</ID>
+              <Description>"Battle Phase"</Description>
+              <LastState Value="0" RealAddress="2059DD9F"/>
+              <VariableType>Byte</VariableType>
+              <Address>2059DD9F</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>401</ID>
+              <Description>"Mirror Mode"</Description>
+              <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">00:Off
+01:On
+</DropDownList>
+              <LastState Value="00" RealAddress="20593D6C"/>
+              <ShowAsHex>1</ShowAsHex>
+              <VariableType>Byte</VariableType>
+              <Address>20593D6C</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>423</ID>
+          <Description>"Camera"</Description>
+          <Options moHideChildren="1"/>
+          <LastState Value="" RealAddress="00000000"/>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>346</ID>
+              <Description>"Camera Focus"</Description>
+              <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:Player
+1:Player Stand
+2:Enemy
+3:Enemy Stand
+4:None
+</DropDownList>
+              <LastState Value="4" RealAddress="2059DDC2"/>
+              <VariableType>Byte</VariableType>
+              <Address>2059DDC2</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>399</ID>
+              <Description>"Camera FOV"</Description>
+              <LastState Value="3F490FDB" RealAddress="203F2E5C"/>
+              <ShowAsHex>1</ShowAsHex>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>203F2E5C</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>420</ID>
+          <Description>"Model Viewer Background"</Description>
+          <Options moHideChildren="1"/>
+          <LastState Value="" RealAddress="00000000"/>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>406</ID>
+              <Description>"Model Viewer Red"</Description>
+              <LastState Value="0" RealAddress="20C2F110"/>
+              <Color>0000FF</Color>
+              <VariableType>Float</VariableType>
+              <Address>20C2F110</Address>
+              <Hotkeys>
+                <Hotkey>
+                  <Action>Set Value</Action>
+                  <Keys>
+                    <Key>17</Key>
+                    <Key>76</Key>
+                  </Keys>
+                  <Value>0</Value>
+                  <ID>0</ID>
+                </Hotkey>
+                <Hotkey>
+                  <Action>Activate</Action>
+                  <Keys>
+                    <Key>17</Key>
+                    <Key>76</Key>
+                  </Keys>
+                  <Description>Green Screen</Description>
+                  <ID>1</ID>
+                </Hotkey>
+              </Hotkeys>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>407</ID>
+              <Description>"Model Viewer Green"</Description>
+              <LastState Value="0" RealAddress="20C2F114"/>
+              <Color>008000</Color>
+              <VariableType>Float</VariableType>
+              <Address>20C2F114</Address>
+              <Hotkeys>
+                <Hotkey>
+                  <Action>Set Value</Action>
+                  <Keys>
+                    <Key>17</Key>
+                    <Key>76</Key>
+                  </Keys>
+                  <Value>20</Value>
+                  <ID>0</ID>
+                </Hotkey>
+                <Hotkey>
+                  <Action>Activate</Action>
+                  <Keys>
+                    <Key>17</Key>
+                    <Key>76</Key>
+                  </Keys>
+                  <Description>Green Screen</Description>
+                  <ID>1</ID>
+                </Hotkey>
+              </Hotkeys>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>408</ID>
+              <Description>"Model Viewer Blue"</Description>
+              <LastState Value="2.351276809E-38" RealAddress="20C2F118"/>
+              <Color>FF0000</Color>
+              <VariableType>Float</VariableType>
+              <Address>20C2F118</Address>
+              <Hotkeys>
+                <Hotkey>
+                  <Action>Set Value</Action>
+                  <Keys>
+                    <Key>17</Key>
+                    <Key>76</Key>
+                  </Keys>
+                  <Value>0</Value>
+                  <ID>0</ID>
+                </Hotkey>
+                <Hotkey>
+                  <Action>Activate</Action>
+                  <Keys>
+                    <Key>17</Key>
+                    <Key>76</Key>
+                  </Keys>
+                  <Description>Green Screen</Description>
+                  <ID>1</ID>
+                </Hotkey>
+              </Hotkeys>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>409</ID>
+              <Description>"Model Viewer Alpha"</Description>
+              <LastState Value="6.697449041E26" RealAddress="20C2F11C"/>
+              <Color>808080</Color>
+              <VariableType>Float</VariableType>
+              <Address>20C2F11C</Address>
+              <Hotkeys>
+                <Hotkey>
+                  <Action>Set Value</Action>
+                  <Keys>
+                    <Key>17</Key>
+                    <Key>76</Key>
+                  </Keys>
+                  <Value>1</Value>
+                  <ID>0</ID>
+                </Hotkey>
+                <Hotkey>
+                  <Action>Activate</Action>
+                  <Keys>
+                    <Key>17</Key>
+                    <Key>76</Key>
+                  </Keys>
+                  <Description>Green Screen</Description>
+                  <ID>1</ID>
+                </Hotkey>
+              </Hotkeys>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>426</ID>
+              <Description>"Model Viewer Red Reset"</Description>
+              <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">1189:Normal
+9090:Disabled
+</DropDownList>
+              <LastState Value="8301" RealAddress="301ADC35"/>
+              <ShowAsHex>1</ShowAsHex>
+              <Color>0000FF</Color>
+              <VariableType>2 Bytes</VariableType>
+              <Address>301ADC35</Address>
+              <Hotkeys>
+                <Hotkey>
+                  <Action>Set Value</Action>
+                  <Keys>
+                    <Key>17</Key>
+                    <Key>76</Key>
+                  </Keys>
+                  <Value>9090</Value>
+                  <Description>Green Screen</Description>
+                  <ID>0</ID>
+                </Hotkey>
+              </Hotkeys>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>428</ID>
+              <Description>"Model Viewer Green Reset"</Description>
+              <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">1189:Normal
+9090:Disabled
+</DropDownList>
+              <LastState Value="1288" RealAddress="301ADC69"/>
+              <ShowAsHex>1</ShowAsHex>
+              <Color>008000</Color>
+              <VariableType>2 Bytes</VariableType>
+              <Address>301ADC69</Address>
+              <Hotkeys>
+                <Hotkey>
+                  <Action>Set Value</Action>
+                  <Keys>
+                    <Key>17</Key>
+                    <Key>76</Key>
+                  </Keys>
+                  <Value>9090</Value>
+                  <Description>Green Screen</Description>
+                  <ID>0</ID>
+                </Hotkey>
+              </Hotkeys>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>427</ID>
+              <Description>"Model Viewer Blue Reset"</Description>
+              <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">1189:Normal
+9090:Disabled
+</DropDownList>
+              <LastState Value="C701" RealAddress="301ADC9D"/>
+              <ShowAsHex>1</ShowAsHex>
+              <Color>FF0000</Color>
+              <VariableType>2 Bytes</VariableType>
+              <Address>301ADC9D</Address>
+              <Hotkeys>
+                <Hotkey>
+                  <Action>Set Value</Action>
+                  <Keys>
+                    <Key>17</Key>
+                    <Key>76</Key>
+                  </Keys>
+                  <Value>9090</Value>
+                  <Description>Green Screen</Description>
+                  <ID>0</ID>
+                </Hotkey>
+              </Hotkeys>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>429</ID>
+              <Description>"Model Viewer Alpha Reset"</Description>
+              <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">1189:Normal
+9090:Disabled
+</DropDownList>
+              <LastState Value="0131" RealAddress="301ADCD1"/>
+              <ShowAsHex>1</ShowAsHex>
+              <Color>808080</Color>
+              <VariableType>2 Bytes</VariableType>
+              <Address>301ADCD1</Address>
+              <Hotkeys>
+                <Hotkey>
+                  <Action>Set Value</Action>
+                  <Keys>
+                    <Key>17</Key>
+                    <Key>76</Key>
+                  </Keys>
+                  <Value>9090</Value>
+                  <Description>Green Screen</Description>
+                  <ID>0</ID>
+                </Hotkey>
+              </Hotkeys>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>422</ID>
+          <Description>"Character Animations"</Description>
+          <Options moHideChildren="1"/>
+          <LastState Value="" RealAddress="00000000"/>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>410</ID>
+              <Description>"Character Depth"</Description>
+              <LastState Value="1" RealAddress="20593C08"/>
+              <VariableType>Float</VariableType>
+              <Address>20593C08</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>411</ID>
+              <Description>"Character Width"</Description>
+              <LastState Value="1" RealAddress="20593C10"/>
+              <VariableType>Float</VariableType>
+              <Address>20593C10</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>412</ID>
+              <Description>"Character Height"</Description>
+              <LastState Value="1" RealAddress="20593C0C"/>
+              <VariableType>Float</VariableType>
+              <Address>20593C0C</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>416</ID>
+              <Description>"In-Game Face"</Description>
+              <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:Neutral
+1:Angry
+2:Shocked
+3:Sad
+</DropDownList>
+              <LastState Value="0" RealAddress="20593E11"/>
+              <VariableType>Byte</VariableType>
+              <Address>20593E11</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>417</ID>
+              <Description>"In-Game Left Hand"</Description>
+              <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:Neutral
+1:Clenched
+2:Outstretched
+</DropDownList>
+              <LastState Value="0" RealAddress="20593E13"/>
+              <VariableType>Byte</VariableType>
+              <Address>20593E13</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>418</ID>
+              <Description>"In-Game Right Hand"</Description>
+              <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:Neutral
+1:Clenched
+2:Outstretched
+</DropDownList>
+              <LastState Value="0" RealAddress="20593E15"/>
+              <VariableType>Byte</VariableType>
+              <Address>20593E15</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+  <Comments>Ctrl+H - "Crazy Diamond!" Full Heal
+(Ctrl+Shift+H - Max Heal)
+Ctrl+G - "Gold Experience!" Stand Heal
+(Ctrl+Shift+G - Max Stand Heal)
+Ctrl+T - "Run for your life!" Timer End
+Ctrl+S - "Good grief." Max Secret Factors
+Ctrl+O - "Fate has chosen me!" One-Hit K.O.
+Ctrl+E - "King Crimson!" Time Erase
+(Ctrl+Shift+E - "Time returns to normal!")
+Ctrl+D - "The World!" Time Stop
+(Ctrl+Shift+D - "Time resumes.")
+Ctrl+M - "Whitesnake!" Mute
+(Ctrl+Shift+M - Unmute)
+Ctrl+Y - "Eat lead!" Reload (Mista)
+This cheat table was jointly created by penguino and Hudgyn Sasdarl.
+</Comments>
+</CheatTable>
